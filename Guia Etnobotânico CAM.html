@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Guia técnico e etnobotânico digital: espécies nativas e PANCs de Camaçari, saberes ancestrais, resultados de germinação de bombas de sementes e orientações para a dispersão comunitária.">
+  <title>Guia Etnobotânico de Camaçari</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+
+  <!-- ==================== NAVEGAÇÃO ==================== -->
+  <header class="nav">
+    <button class="brand" data-go="inicio">Guia Etnobotânico de Camaçari</button>
+    <nav aria-label="Principal">
+      <button class="nav-link" data-go="inicio">Início</button>
+      <button class="nav-link" data-go="especies">Espécies</button>
+      <button class="nav-link" data-go="saberes">Saberes ancestrais</button>
+      <button class="nav-link" data-go="resultados">Resultados</button>
+      <button class="nav-link" data-go="dispersao">Dispersão</button>
+      <button class="nav-link" data-go="sobre">Sobre</button>
+    </nav>
+    <button class="icon-btn" id="themeBtn" aria-label="Alternar tema claro e escuro">Tema</button>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================== INÍCIO ==================== -->
+    <section id="inicio" class="screen">
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Sementes que voltam ao território</h1>
+          <p class="lede">
+            Um guia técnico e etnobotânico sobre bombas de sementes feitas com espécies
+            nativas e PANCs, inspiradas nos saberes de mulheres negras, indígenas e
+            quilombolas, para restaurar áreas degradadas pela expansão urbana em Camaçari.
+          </p>
+          <div class="actions">
+            <button class="btn primary" data-go="especies">Conhecer as espécies</button>
+            <button class="btn" data-go="resultados">Ver os resultados</button>
+          </div>
+        </div>
+
+        <figure class="plate">
+          <div class="bomb-diagram" id="homeDiagram"></div>
+          <figcaption>Corte de uma bomba de sementes. Toque em uma camada para ver o que ela faz.</figcaption>
+        </figure>
+      </div>
+
+      <div class="wrap">
+        <h2 class="section-title">O que há neste guia</h2>
+        <div class="two-col">
+          <article class="block">
+            <h3>Espécies selecionadas</h3>
+            <p>Caracterização de cada espécie nativa e PANC, com sua importância ecológica e cultural e o comportamento da semente na bomba.</p>
+            <button class="link-btn" data-go="especies">Abrir as fichas</button>
+          </article>
+          <article class="block">
+            <h3>Saberes ancestrais</h3>
+            <p>Práticas de manejo e conservação da biodiversidade guardadas por mulheres negras, quilombolas, marisqueiras, agricultoras e povos indígenas.</p>
+            <button class="link-btn" data-go="saberes">Ler os saberes</button>
+          </article>
+          <article class="block">
+            <h3>Resultados dos experimentos</h3>
+            <p>Germinação das sementes em cada formulação de bomba, com média, desvio-padrão e teste estatístico, e os ensaios de resistência e retenção de água.</p>
+            <button class="link-btn" data-go="resultados">Ver os resultados</button>
+          </article>
+          <article class="block">
+            <h3>Dispersão comunitária</h3>
+            <p>Como fazer as bombas, escolher espécies e lugar, espalhar em áreas degradadas do município e acompanhar o que nasce.</p>
+            <button class="link-btn" data-go="dispersao">Seguir o guia</button>
+          </article>
+        </div>
+      </div>
+
+      <div class="wrap prose">
+        <h2>Por que isso importa</h2>
+        <p>
+          Segundo o Ministério Público Federal (26/06/2026), restam 24% da vegetação nativa da
+          Mata Atlântica, e só metade desse remanescente está bem conservada. O texto aponta a
+          expansão urbana desordenada como uma das causas: ela reduziu o bioma a pequenos
+          fragmentos florestais isolados. A restauração precisa de soluções simples, baratas e
+          feitas com as comunidades que cuidam da terra.
+        </p>
+        <p class="note">
+          Uma bomba de sementes não substitui a proteção da mata que resta nem o plantio de
+          mudas. Este guia mostra o que ela consegue fazer, e mede o quanto.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== ESPÉCIES ==================== -->
+    <section id="especies" class="screen">
+      <header class="page-head wrap">
+        <h2>Espécies nativas e PANCs</h2>
+        <p>
+          Caracterização das espécies selecionadas, com a importância ecológica e cultural de
+          cada uma para o território de Camaçari. PANC é planta alimentícia não convencional:
+          tem parte comestível, mas não é de consumo comum. Abra uma ficha para ver também os
+          cuidados com a semente e como ela se comporta na bomba.
+        </p>
+      </header>
+
+      <div class="toolbar">
+        <input id="speciesSearch" class="search" type="search" aria-label="Buscar espécies"
+               placeholder="Buscar por nome, família ou uso">
+        <div id="tagFilters" class="chips" role="group" aria-label="Filtrar por grupo"></div>
+        <select id="fitSelect" aria-label="Filtrar por uso na bomba">
+          <option value="all">Todas as espécies</option>
+          <option value="sel">Selecionadas para o ensaio</option>
+          <option value="good">Boas para a bomba</option>
+          <option value="out">Fora da bomba</option>
+        </select>
+      </div>
+
+      <div class="count-row wrap">
+        <p id="speciesCount" aria-live="polite"></p>
+        <p id="confirmCount" class="muted"></p>
+        <button class="link-btn" id="clearSpecies" hidden>Limpar filtros</button>
+      </div>
+      <div class="grid wrap" id="speciesGrid"></div>
+    </section>
+
+    <!-- ==================== SABERES ANCESTRAIS ==================== -->
+    <section id="saberes" class="screen">
+      <header class="page-head wrap">
+        <h2>Saberes ancestrais</h2>
+        <p>
+          Manejo e conservação da biodiversidade praticados por mulheres negras, quilombolas,
+          marisqueiras, agricultoras e povos indígenas. Antes de virar tecnologia, a
+          restauração já existe como prática: nos quintais, nas roças, nos mangues e nas
+          aldeias.
+        </p>
+      </header>
+
+      <div class="wrap prose">
+        <h3>Amefricanidade</h3>
+        <p>
+          Lélia Gonzalez cunhou o termo em 1980, juntando América e África. A categoria nasce
+          da diáspora negra e do extermínio dos povos indígenas nas Américas, e nomeia a
+          experiência comum de negros e indígenas contra a dominação colonial. Ela valoriza
+          histórias de resistência e propõe produzir conhecimento a partir de quem foi
+          colocado à margem. Para a autora, as mulheres negras e indígenas, as amefricanas, são
+          o ponto central da transformação social.
+        </p>
+        <p class="note">Fonte: reportagem do Jornal da USP.</p>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Quem guarda esses saberes</h3>
+        <div class="knowledge">
+          <article class="know">
+            <h4>Mulheres negras e quilombolas</h4>
+            <p><strong>O que a literatura registra:</strong> quintais e roças com muitas espécies, uso de ervas por benzedeiras e rezadeiras, e transmissão oral entre gerações.</p>
+            <p><strong>Na bomba:</strong> escolha de espécies conhecidas pela comunidade e coleta em árvores-matriz locais.</p>
+          </article>
+          <article class="know">
+            <h4>Marisqueiras e pescadoras</h4>
+            <p><strong>O que a literatura registra:</strong> conhecimento fino de marés, manguezais e estuários, e atenção aos ciclos de lua e de chuva.</p>
+            <p><strong>Na bomba:</strong> escolha da época de dispersão e vigilância dos locais onde as bombas forem colocadas.</p>
+          </article>
+          <article class="know">
+            <h4>Agricultoras e guardiãs de sementes</h4>
+            <p><strong>O que a literatura registra:</strong> as sementes crioulas, selecionadas e guardadas por famílias ao longo de gerações, adaptadas ao lugar.</p>
+            <p><strong>Na bomba:</strong> critérios para escolher árvores-matriz e cuidados com o armazenamento das sementes.</p>
+          </article>
+          <article class="know">
+            <h4>Povos indígenas</h4>
+            <p><strong>O que a literatura registra:</strong> manejo de roças, áreas em pousio e matas, e a terra preta de índio, solo da Amazônia enriquecido com carvão e matéria orgânica.</p>
+            <p><strong>Na bomba:</strong> o biochar da formulação F3 se inspira na terra preta. A terra preta é amazônica, então a ligação com a Bahia é inspiração, não equivalência.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Do saber à tecnologia</h3>
+        <div class="table-wrap">
+          <table class="table">
+            <thead>
+              <tr><th scope="col">Prática</th><th scope="col">Princípio científico</th><th scope="col">No protótipo</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Terra preta de índio, com carvão e matéria orgânica</td><td>Material poroso retém água e nutrientes</td><td>Biochar na formulação F3</td></tr>
+              <tr><td>Quintal com muitas espécies</td><td>Diversidade funcional: cobertura do solo, fixação de nitrogênio, alimento para a fauna</td><td>Mistura de espécies no montador</td></tr>
+              <tr><td>Calendário de chuvas e marés</td><td>Fenologia e disponibilidade de água para a germinação</td><td>Data de dispersão no início do período chuvoso</td></tr>
+              <tr><td>Sementes crioulas e árvores-matriz</td><td>Adaptação local e diversidade genética</td><td>Coleta em matrizes locais</td></tr>
+              <tr><td>Plantas mucilaginosas usadas em preparos populares</td><td>Hidrocoloides colam partículas e retêm água</td><td>Mucilagem de ora-pro-nóbis na formulação F4 (hipótese)</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Registros da equipe com as comunidades</h3>
+        <div id="testimonies"></div>
+      </div>
+
+      <div class="wrap">
+        <details class="team-panel">
+          <summary>Para a equipe: ética e roteiro de entrevista</summary>
+          <div class="panel-body two-col">
+            <div>
+              <h4>Ética da pesquisa com saberes</h4>
+              <ul class="plain">
+                <li>Peça consentimento livre e informado antes de gravar, fotografar ou anotar.</li>
+                <li>Credite quem ensinou, com nome e comunidade, se a pessoa autorizar.</li>
+                <li>Devolva o resultado do trabalho para a comunidade.</li>
+                <li>A Lei nº 13.123/2015 trata do acesso ao conhecimento tradicional associado. Converse com o professor antes de registrar saberes.</li>
+                <li>Só publique um registro na página depois da autorização. Os registros entram em TESTIMONIES, no arquivo data.js.</li>
+              </ul>
+            </div>
+            <div>
+              <h4>Roteiro de entrevista</h4>
+              <ol class="plain">
+                <li>Como a senhora aprendeu a cuidar das plantas?</li>
+                <li>Quais plantas nativas do território a senhora conhece e usa?</li>
+                <li>Como escolhe e guarda as sementes?</li>
+                <li>Como sabe a época certa de plantar?</li>
+                <li>Que lugares do território perderam mata nos últimos anos?</li>
+                <li>O que a senhora faria para a mata voltar?</li>
+                <li>A senhora autoriza que esse saber apareça no trabalho? Com qual nome?</li>
+              </ol>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ==================== RESULTADOS ==================== -->
+    <section id="resultados" class="screen">
+      <header class="page-head wrap">
+        <h2>Resultados dos experimentos</h2>
+        <p>
+          Comparação de formulações de bombas de sementes quanto à germinação, com ensaios
+          complementares de resistência mecânica e retenção de água. Os números vêm das
+          medidas da equipe: nada aqui é estimado ou simulado.
+        </p>
+      </header>
+
+      <div class="wrap">
+        <h3 class="section-title">Formulações testadas</h3>
+        <p class="muted measure">
+          Proporções em partes de volume (o mesmo copo medidor). A água entra até a massa
+          ficar moldável.
+        </p>
+        <div class="formulations" id="formulationList"></div>
+      </div>
+
+      <div class="wrap" id="labRoot"></div>
+    </section>
+
+    <!-- ==================== DISPERSÃO ==================== -->
+    <section id="dispersao" class="screen">
+      <header class="page-head wrap">
+        <h2>Dispersão comunitária</h2>
+        <p>
+          Orientações para fazer as bombas e espalhá-las, com a comunidade, em áreas
+          degradadas do município. Marque os itens conforme avança: o progresso fica salvo
+          neste navegador.
+        </p>
+      </header>
+
+      <div class="wrap">
+        <h3 class="section-title">Fazer as bombas</h3>
+        <ol class="steps" id="stepList"></ol>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Escolher as espécies</h3>
+        <p class="muted measure">
+          Marque as espécies do lote. O montador confere se a mistura cobre as funções
+          ecológicas principais e avisa dos cuidados de cada semente. Os avisos são
+          orientações, não regras.
+        </p>
+        <div class="builder">
+          <div id="mixPicker" class="mix-picker"></div>
+          <div id="mixReport" class="mix-report" aria-live="polite"></div>
+        </div>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Calcular o material</h3>
+        <form class="calc" id="calcForm" novalidate>
+          <label>Formulação
+            <select id="calcFormulation"></select>
+          </label>
+          <label>Número de bombas
+            <input id="calcCount" type="text" inputmode="numeric" value="50">
+          </label>
+          <label>Diâmetro (cm)
+            <input id="calcDiameter" type="text" inputmode="decimal" value="3">
+          </label>
+          <label>Sementes por bomba
+            <input id="calcSeeds" type="text" inputmode="numeric" value="2">
+          </label>
+        </form>
+        <div id="calcResult" class="calc-result" aria-live="polite"></div>
+      </div>
+
+      <div class="wrap three-col">
+        <article class="block">
+          <h3>Escolher o lugar</h3>
+          <ul class="checks">
+            <li><label><input type="checkbox" data-check="disp-1"> Conversei com o proprietário ou o órgão responsável pela área. Em unidades de conservação, áreas de preservação permanente e dunas, só com autorização do órgão ambiental.</label></li>
+            <li><label><input type="checkbox" data-check="disp-2"> Usei só espécies nativas, com sementes de árvores-matriz locais.</label></li>
+            <li><label><input type="checkbox" data-check="disp-3"> Escolhi a época: o início do período chuvoso. Confira a série de chuva no INMET.</label></li>
+            <li><label><input type="checkbox" data-check="disp-4"> Preenchi a ficha da área (abaixo).</label></li>
+            <li><label><input type="checkbox" data-check="disp-5"> Combinei com moradores e lideranças: a comunidade ajuda a escolher o local e a monitorar.</label></li>
+          </ul>
+        </article>
+        <article class="block">
+          <h3>Espalhar no dia</h3>
+          <ul class="checks">
+            <li><label><input type="checkbox" data-check="dia-1"> Retirei lixo e entulho do ponto, sem usar fogo.</label></li>
+            <li><label><input type="checkbox" data-check="dia-2"> Coloquei as bombas em pequenas depressões, apoiadas na superfície, sem enterrar fundo.</label></li>
+            <li><label><input type="checkbox" data-check="dia-3"> Misturei as espécies pelo terreno, sem concentrar uma só.</label></li>
+            <li><label><input type="checkbox" data-check="dia-4"> Registrei data, ponto de referência, número de bombas e espécies, com fotos.</label></li>
+            <li><label><input type="checkbox" data-check="dia-5"> Usei luvas, calçado fechado, protetor solar e água. Cuidado com espinhos e plantas irritantes.</label></li>
+          </ul>
+        </article>
+        <article class="block">
+          <h3>Acompanhar depois</h3>
+          <ul class="checks">
+            <li><label><input type="checkbox" data-check="dep-1"> Marquei parcelas de 1 m² para contar plântulas.</label></li>
+            <li><label><input type="checkbox" data-check="dep-2"> Voltei aos 15, 30, 60 e 90 dias e fotografei do mesmo ângulo.</label></li>
+            <li><label><input type="checkbox" data-check="dep-3"> Anotei o que explica as falhas: formigas, seca, enxurrada.</label></li>
+            <li><label><input type="checkbox" data-check="dep-4"> Devolvi os resultados para a comunidade que ajudou.</label></li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="wrap prose">
+        <p class="note">
+          Os resultados variam muito com chuva, solo e animais. Registrar o que não deu certo
+          também é resultado: ele mostra os limites da técnica e orienta a próxima tentativa.
+        </p>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Ficha da área</h3>
+        <p class="muted measure">Cada área visitada ou escolhida para a dispersão ganha uma ficha, salva neste navegador.</p>
+        <form class="area-form" id="areaForm">
+          <label>Local
+            <input id="areaName" type="text" maxlength="80" required placeholder="Ex.: terreno ao lado da escola">
+          </label>
+          <label>Tipo de degradação
+            <select id="areaType">
+              <option>Desmatamento</option>
+              <option>Lixo e entulho</option>
+              <option>Solo exposto ou erosão</option>
+              <option>Pasto de capim</option>
+              <option>Aterro ou loteamento</option>
+              <option>Outro</option>
+            </select>
+          </label>
+          <label>Solo
+            <select id="areaSoil">
+              <option>Arenoso</option><option>Argiloso</option><option>Misto</option><option>Não sei</option>
+            </select>
+          </label>
+          <label>Sol
+            <select id="areaSun">
+              <option>Pleno</option><option>Parcial</option><option>Sombra</option>
+            </select>
+          </label>
+          <label class="wide">Observações
+            <input id="areaNotes" type="text" maxlength="200" placeholder="Vegetação que sobrou, acesso, vizinhança">
+          </label>
+          <button class="btn primary" type="submit">Salvar ficha</button>
+        </form>
+        <div id="areaList" class="area-list"></div>
+      </div>
+    </section>
+
+    <!-- ==================== SOBRE ==================== -->
+    <section id="sobre" class="screen">
+      <header class="page-head wrap">
+        <h2>Sobre o guia</h2>
+        <p>
+          Produto do projeto de Ciências da Natureza, subtema Tecnologias do Bem Viver:
+          soluções biotecnológicas e ancestrais para a restauração ecológica dos territórios
+          da Bahia.
+        </p>
+      </header>
+
+      <div class="wrap prose">
+        <h3>A pergunta</h3>
+        <p>
+          Como os saberes ancestrais preservados por mulheres negras, indígenas e quilombolas,
+          guardiãs dos territórios e da biodiversidade, podem inspirar a criação de uma solução
+          biotecnológica de baixo custo para restaurar áreas degradadas pela expansão urbana na
+          Bahia, protegendo sementes e favorecendo sua germinação sem irrigação constante?
+        </p>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">O que a pesquisa quis fazer</h3>
+        <ul class="objectives">
+          <li><span>Investigar tecnologias ancestrais associadas ao manejo ambiental e à conservação da biodiversidade.</span><button class="link-btn" data-go="saberes">Saberes ancestrais</button></li>
+          <li><span>Identificar espécies nativas e PANCs de relevância ecológica e cultural para o território de Camaçari.</span><button class="link-btn" data-go="especies">Espécies</button></li>
+          <li><span>Desenvolver e testar protótipos de bombas de sementes enriquecidas com componentes que favoreçam a germinação.</span><button class="link-btn" data-go="dispersao">Fazer as bombas</button></li>
+          <li><span>Comparar diferentes formulações quanto à retenção hídrica, resistência mecânica e eficiência germinativa.</span><button class="link-btn" data-go="resultados">Resultados</button></li>
+          <li><span>Relacionar os conhecimentos científicos da restauração ecológica aos saberes ambientais preservados por mulheres negras e indígenas da Bahia.</span><button class="link-btn" data-go="saberes">Do saber à tecnologia</button></li>
+        </ul>
+      </div>
+
+      <div class="wrap two-col">
+        <article class="block" id="teamBox"></article>
+        <article class="block">
+          <h3>Uso responsável</h3>
+          <p>
+            Os textos das fichas das espécies são resumos para estudo, e a lista de espécies
+            ainda depende de confirmação de ocorrência em Camaçari. Antes de espalhar bombas
+            em qualquer área, confirme a autorização com quem responde por ela.
+          </p>
+        </article>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Fontes</h3>
+        <div class="two-col">
+          <div>
+            <h4>Lidas para montar este guia</h4>
+            <ul class="sources" id="sourcesRead"></ul>
+          </div>
+          <div>
+            <h4>Para consultar e citar</h4>
+            <ul class="sources" id="sourcesConsult"></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== JANELA: FICHA DA ESPÉCIE ==================== -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <button class="modal-close" id="closeBtn" aria-label="Fechar">Fechar</button>
+      <div id="modalContent"></div>
+      <div class="modal-pager">
+        <button class="btn" id="prevBtn">Anterior</button>
+        <button class="btn" id="nextBtn">Próxima</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <noscript><p class="wrap">Este guia precisa de JavaScript para funcionar.</p></noscript>
+
+  <script src="stats.js"></script>
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
