@@ -182,15 +182,22 @@ function initDiagram(root) {
 
 
 /* ---------- 4. ESPÉCIES ---------- */
-const TILE_CLASS = { "Pioneira": "pioneira", "Restinga e Mata": "restinga", "Frutífera nativa": "fruta", "PANC": "panc" };
+const TILE_CLASS = { "Pioneira": "pioneira", "Restinga e Mata": "restinga", "Frutífera nativa": "fruta", "PANC": "panc", "Uso tradicional": "fruta", "Introduzida": "panc" };
 const tileClass = (sp) => TILE_CLASS[sp.tags[0]] || "restinga";
+
+function photoOf(sp) {
+  const ph = (typeof PHOTOS !== "undefined" && PHOTOS[sp.id]) || null;
+  return ph && ph.src ? ph : null;
+}
+const photoImg = (sp, ph, big = false) => `<img src="${esc(ph.src)}" alt="${esc(ph.alt || sp.name)}" loading="lazy" style="${big ? "display:block;width:100%;max-height:18rem;" : "position:absolute;inset:0;width:100%;height:100%;"}object-fit:cover" onerror="this.closest('.tile, .modal-photo').classList.remove('has-photo');this.remove()">`;
 
 function visibleSpecies() {
   const query = normalize(state.search.trim());
   return SPECIES.filter((sp) => {
-    const text = normalize([sp.name, sp.sci, sp.family, sp.tags.join(" "), sp.culture].join(" "));
+    const originTag = ORIGIN_LABELS[sp.origin];
+    const text = normalize([sp.name, sp.sci, sp.family, originTag, sp.tags.join(" "), sp.culture].join(" "));
     return (
-      (state.tag === "Todas" || sp.tags.includes(state.tag)) &&
+      (state.tag === "Todas" || sp.tags.includes(state.tag) || originTag === state.tag) &&
       (state.fit === "all" || (state.fit === "sel" ? SELECTED.includes(sp.id) : state.fit === "good" ? sp.fit >= 2 : sp.fit === 0)) &&
       text.includes(query)
     );
@@ -221,13 +228,13 @@ function renderSpecies() {
   $("speciesGrid").innerHTML = list.length ? list.map((sp) => `
     <article class="card">
       <button class="card-open" data-open="${sp.id}" aria-label="Abrir a ficha de ${esc(sp.name)}">
-        <span class="tile ${tileClass(sp)}">
-          <span class="tile-letter" aria-hidden="true">${esc(sp.name[0])}</span>
+        <span class="tile ${tileClass(sp)}${photoOf(sp) ? " has-photo" : ""}">
+          ${photoOf(sp) ? photoImg(sp, photoOf(sp)) : ""}<span class="tile-letter" aria-hidden="true">${esc(sp.name[0])}</span>
           <span class="tile-sci">${esc(sp.sci)}</span>
         </span>
         <span class="card-body">
           <span class="card-name">${esc(sp.name)}</span>
-          <span class="card-meta">${esc(sp.tags.join(", "))}</span>
+          <span class="card-meta">${esc([ORIGIN_LABELS[sp.origin], ...sp.tags].join(", "))}</span>
           ${SELECTED.includes(sp.id) ? '<span class="selected-mark">Selecionada para o ensaio</span>' : ""}
           <span class="fit ${sp.fit === 0 ? "zero" : ""}">${fitBars(sp.fit)}${FIT_LABELS[sp.fit]}</span>
         </span>
@@ -273,8 +280,10 @@ function renderSpeciesModal(id) {
       <p class="sci">${esc(sp.sci)}</p>
       <p class="family">Família ${esc(sp.family)}</p>
     </div>
+    ${photoOf(sp) ? `<figure class="modal-photo has-photo" style="margin:0">${photoImg(sp, photoOf(sp), true)}${photoOf(sp).credit ? `<figcaption>${esc(photoOf(sp).credit)}</figcaption>` : ""}</figure>` : ""}
     <div class="modal-body">
-      <div class="tag-list">${SELECTED.includes(sp.id) ? '<span class="tag sel">Selecionada para o ensaio</span>' : ""}${sp.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}${sp.roles.map((r) => `<span class="tag">${esc(ROLE_LABELS[r])}</span>`).join("")}</div>
+      <div class="tag-list"><span class="tag origin ${sp.origin}">${esc(ORIGIN_LABELS[sp.origin])}</span>${SELECTED.includes(sp.id) ? '<span class="tag sel">Selecionada para o ensaio</span>' : ""}${sp.tags.map((t) => `<span class="tag">${esc(t)}</span>`).join("")}${sp.roles.map((r) => `<span class="tag">${esc(ROLE_LABELS[r])}</span>`).join("")}</div>
+      <section><h4>Origem</h4><p>${esc(sp.originNote)}</p></section>
       <section><h4>Importância ecológica</h4><p>${esc(sp.ecology)}</p></section>
       <section><h4>Importância cultural</h4><p>${esc(sp.culture)}</p></section>
       <section><h4>Semente</h4><ul>${sp.seed.map((s) => `<li>${esc(s)}</li>`).join("")}</ul></section>
