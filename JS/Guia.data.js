@@ -21,126 +21,122 @@
    flags (opcional, alimenta os avisos do montador):
          fresca (semente recalcitrante) | dormencia | luz | grande
    roles: cobertura | solo | fauna | alimento | conservacao
-   tags:  Pioneira | Restinga e Mata | Frutífera nativa | PANC
+   origin: nativa | introduzida (diga sempre a origem; espécie introduzida
+          não deve ser espalhada em vegetação nativa) · originNote: texto da origem
+   tags:  Pioneira | Restinga e Mata | Frutífera nativa | PANC | Uso tradicional
+          (Nativa e Introduzida vêm do campo origin e aparecem como filtro)
    Os textos são resumos para estudo. Confirme cada dado nas
    fontes (seção 8) antes de citá-lo no artigo.
 ------------------------------------------- */
 const SPECIES = [
   {
-    id: "aroeira", name: "Aroeira-vermelha", sci: "Schinus terebinthifolia", family: "Anacardiaceae",
-    tags: ["Pioneira", "Restinga e Mata"], roles: ["cobertura", "fauna"], fit: 3,
-    ecology: "Pioneira de crescimento rápido, comum em restingas e bordas de mata. Os frutos alimentam aves, que ajudam a espalhar as sementes.",
-    culture: "Os frutos são a pimenta-rosa da culinária. Casca e folhas aparecem em usos medicinais populares.",
-    seed: ["Retirar a polpa do fruto costuma melhorar a germinação.", "Guardar seca e fresca, por pouco tempo."],
-    bomb: "Boa candidata: sementes pequenas, fáceis de envolver na argila.",
-    caution: "Pode causar dermatite de contato em pessoas sensíveis. Use luvas."
+    id: "caupi", name: "Feijão-caupi", sci: "Vigna unguiculata (L.) Walp.", family: "Fabaceae",
+    origin: "introduzida",
+    originNote: "Veio da África. Segundo a Embrapa, chegou ao Brasil na segunda metade do século XVI, pela Bahia, e dali se espalhou pelo país.",
+    tags: ["Uso tradicional"], roles: ["cobertura", "solo", "alimento"], fit: 3,
+    ecology: "Leguminosa que se associa a bactérias do solo e fixa nitrogênio. Cresce em solos pobres e aguenta falta de água, por isso é muito usada para cobrir e melhorar a terra.",
+    culture: "É o feijão-de-corda, feijão-macassar ou feijão-fradinho. O fradinho é a base do acarajé, e o Ofício das Baianas de Acarajé foi registrado pelo Iphan como patrimônio imaterial em 2005.",
+    seed: ["Semente grande e uniforme, fácil de contar e de envolver.", "Costuma germinar em poucos dias. Confirme no seu próprio teste de germinação."],
+    bomb: "Boa candidata para o primeiro ensaio: com ela dá para comparar as formulações em pouco tempo. É anual, então serve mais para cobrir o solo e melhorar a terra do que para restaurar mata.",
+    caution: "Não consuma o feijão cru: ele precisa de cozimento."
   },
   {
-    id: "embauba", name: "Embaúba", sci: "Cecropia pachystachya", family: "Urticaceae",
-    tags: ["Pioneira"], roles: ["cobertura", "fauna"], fit: 3, flags: ["luz"],
-    ecology: "Ocupa clareiras e áreas abertas, sombreia o solo e atrai aves e morcegos pelos frutos.",
-    culture: "As folhas têm uso medicinal popular, em chás. É uma referência quando se fala de regeneração da mata.",
-    seed: ["Sementes minúsculas que precisam de luz para germinar: não enterre.", "Uma casca grossa de argila pode bloquear a luz."],
-    bomb: "Teste uma camada fina de argila ou deixe as sementes na superfície da bomba. É uma boa pergunta para o experimento.",
-    caution: ""
+    id: "maxixe", name: "Maxixe", sci: "Cucumis anguria L.", family: "Cucurbitaceae",
+    origin: "introduzida",
+    originNote: "Originário da África tropical, segundo a Embrapa. Hoje é um alimento de regiões de forte influência africana no Brasil, como o Nordeste.",
+    tags: ["PANC"], roles: ["cobertura", "alimento"], fit: 2,
+    ecology: "Trepadeira rasteira, anual, que cobre o solo com rapidez. É rústica e tolera calor e chuva forte. As flores recebem visita de abelhas.",
+    culture: "O fruto, verde e com espinhos macios, é comido cozido, cru em salada ou em conserva. Está na mesa de muitas famílias do Nordeste.",
+    seed: ["Sementes achatadas, em grande número dentro do fruto.", "O fruto fica pronto para colher uns 55 a 65 dias depois da semeadura."],
+    bomb: "Funciona melhor em horta comunitária do que em restauração de mata. As sementes cabem na bomba, mas teste o encaixe e o tamanho da esfera.",
+    caution: "É espécie introduzida: não espalhe em restinga ou mata nativa preservada."
   },
   {
-    id: "inga", name: "Ingá", sci: "Inga spp. (ex.: Inga laurina)", family: "Fabaceae",
-    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["solo", "fauna", "alimento"], fit: 1, flags: ["fresca"],
-    ecology: "Leguminosa que se associa a bactérias fixadoras de nitrogênio e melhora o solo. As flores atraem beija-flores e abelhas.",
-    culture: "A polpa branca e doce do fruto é comida in natura. A árvore é comum em quintais e beiras de rio.",
-    seed: ["Sementes recalcitrantes: perdem a viabilidade em poucos dias e não toleram secagem."],
-    bomb: "Só funciona com sementes recém-colhidas, em bombas feitas e semeadas no mesmo dia. Não serve para estoque.",
-    caution: ""
-  },
-  {
-    id: "jatoba", name: "Jatobá", sci: "Hymenaea courbaril", family: "Fabaceae",
-    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 2, flags: ["dormencia", "grande"],
-    ecology: "Árvore grande e longeva. Cutias e outros roedores enterram suas sementes e ajudam na dispersão.",
-    culture: "A polpa farinácea do fruto é consumida. A resina, a jutaicica, tem usos tradicionais.",
-    seed: ["Tegumento muito duro: precisa de quebra de dormência (escarificação mecânica ou ácida).", "A Embrapa lista o jatobá entre as espécies com esse tratamento."],
-    bomb: "Escarifique antes. As sementes são grandes, então a bomba precisa ser maior ou a semente vai direto ao solo.",
-    caution: "Ao lixar as sementes, use luvas e óculos."
-  },
-  {
-    id: "mulungu", name: "Mulungu", sci: "Erythrina velutina", family: "Fabaceae",
-    tags: ["Pioneira", "Restinga e Mata"], roles: ["cobertura", "solo", "fauna"], fit: 3, flags: ["dormencia"],
-    ecology: "Leguminosa de crescimento rápido. As flores, ricas em néctar, atraem aves e abelhas.",
-    culture: "A casca é usada em chás calmantes na medicina popular.",
-    seed: ["Tegumento impermeável: escarificar ou imergir em água ajuda a germinar."],
-    bomb: "Tamanho médio, bom encaixe na bomba. Escarifique antes de moldar.",
-    caution: "As sementes de Erythrina são tóxicas se ingeridas. Mantenha longe de crianças e animais."
-  },
-  {
-    id: "pitanga", name: "Pitanga", sci: "Eugenia uniflora", family: "Myrtaceae",
-    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 2, flags: ["fresca"],
-    ecology: "Myrtaceae é a família com mais espécies na Mata Atlântica e nas restingas. A pitangueira alimenta aves e insetos.",
-    culture: "O fruto é comum em quintais e as folhas são usadas em chás populares.",
-    seed: ["As sementes perdem a viabilidade rápido: semeie logo depois de tirar a polpa."],
-    bomb: "Use bombas feitas e semeadas em poucos dias.",
-    caution: ""
-  },
-  {
-    id: "murici", name: "Murici", sci: "Byrsonima blanchetiana", family: "Malpighiaceae",
-    tags: ["Restinga e Mata", "Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2,
-    ecology: "Aparece entre as espécies de maior valor de importância na restinga em moitas de Praia do Forte, no Litoral Norte da Bahia.",
-    culture: "As espécies de Byrsonima são chamadas de muricis, e seus frutos são consumidos no Nordeste.",
-    seed: ["Endocarpo duro e germinação lenta e irregular em espécies do gênero.", "Há pouca informação específica para esta espécie."],
-    bomb: "Bom tema de experimento: use sementes bem limpas e mais tempo de observação.",
-    caution: ""
-  },
-  {
-    id: "mangaba", name: "Mangaba", sci: "Hancornia speciosa", family: "Apocynaceae",
-    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca"],
-    ecology: "Árvore típica de restingas e tabuleiros costeiros do Nordeste. O fruto alimenta a fauna.",
-    culture: "É colhida do chão quando cai madura. As catadoras de mangaba, mulheres extrativistas, são reconhecidas como comunidade tradicional no Nordeste, com destaque para Sergipe.",
-    seed: ["Sementes recalcitrantes: semeie frescas."],
-    bomb: "Só com semente fresca. Respeite a colheita tradicional: pegue frutos caídos e deixe parte para a fauna.",
-    caution: ""
-  },
-  {
-    id: "araca", name: "Araçá", sci: "Psidium guineense", family: "Myrtaceae",
-    tags: ["Frutífera nativa", "Restinga e Mata", "PANC"], roles: ["fauna", "alimento"], fit: 3,
-    ecology: "Arbusto de áreas abertas e restingas. Os frutos atraem aves e pequenos mamíferos.",
-    culture: "O fruto, ácido e doce, é comido in natura e em doces e sucos. Folhas são usadas em chás populares.",
-    seed: ["Sementes pequenas e numerosas, que germinam bem depois de retirar a polpa."],
-    bomb: "Boa candidata, de tamanho fácil de padronizar.",
-    caution: ""
-  },
-  {
-    id: "jurubeba", name: "Jurubeba", sci: "Solanum paniculatum", family: "Solanaceae",
-    tags: ["Pioneira", "PANC"], roles: ["cobertura", "alimento"], fit: 3,
-    ecology: "Arbusto pioneiro de áreas abertas e pastos degradados. As flores atraem abelhas e os frutos atraem aves.",
-    culture: "Os frutos verdes entram cozidos em pratos regionais e em conservas. A planta também tem uso medicinal popular.",
-    seed: ["Sementes pequenas, boas para a bomba."],
-    bomb: "Boa candidata, e é uma PANC nativa.",
-    caution: "Não coma cru. Confirme a identificação antes de consumir, porque existem Solanum tóxicos."
-  },
-  {
-    id: "oranobis", name: "Ora-pro-nóbis", sci: "Pereskia aculeata", family: "Cactaceae",
+    id: "linguadevaca", name: "Língua-de-vaca", sci: "Rumex obtusifolius L.", family: "Polygonaceae",
+    origin: "introduzida",
+    originNote: "Espécie de origem europeia, hoje espalhada pelo mundo. Confirme a origem e o status no Brasil na Flora e Funga do Brasil.",
     tags: ["PANC"], roles: ["alimento"], fit: 0,
-    ecology: "Cacto trepador nativo das Américas. As flores e os frutos alimentam polinizadores e aves, e a cerca viva espinhosa abriga fauna.",
-    culture: "Uma das PANCs mais conhecidas do país. As folhas são ricas em proteína e em mucilagem.",
-    seed: ["Multiplica-se bem por estaca. A propagação por sementes é menos comum."],
-    bomb: "Fica fora da bomba como semente. Entra no experimento por outro caminho: a mucilagem das folhas é uma hipótese de aglutinante natural, testada na formulação F4.",
-    caution: "Tem espinhos. Use luvas."
+    ecology: "Erva perene de áreas perturbadas e pastos. Cada planta pode produzir dezenas de milhares de sementes, que ficam dormentes no solo por anos. Por isso é tratada como planta invasora.",
+    culture: "Folhas jovens de azedas do gênero Rumex são comidas como hortaliça em várias culturas, e a planta aparece em usos populares de remédio caseiro. Pergunte à comunidade como ela é usada aqui.",
+    seed: ["Produz sementes pequenas em quantidade enorme.", "A dormência no solo é longa: outro motivo para não espalhar."],
+    bomb: "Fica fora da bomba. É introduzida e invasora, e espalhar as sementes em área degradada pode piorar o problema. No guia, ela mostra por que a origem da espécie importa.",
+    caution: "As folhas têm oxalato: com problema nos rins, evite. Cite sempre o nome científico, porque \"língua-de-vaca\" também é nome popular de outras plantas, como a Chaptalia nutans."
   },
   {
-    id: "taioba", name: "Taioba", sci: "Xanthosoma sagittifolium", family: "Araceae",
-    tags: ["PANC"], roles: ["alimento"], fit: 0,
-    ecology: "Cobre o solo úmido de quintais e beiras de córrego.",
-    culture: "As folhas cozidas são consumidas em várias regiões do país.",
-    seed: ["Multiplica-se por rizoma, não por semente."],
-    bomb: "Fora da bomba. Entra nas orientações de plantio comunitário em áreas úmidas.",
-    caution: "Coma somente cozida: a folha crua contém oxalato de cálcio."
+    id: "urucum", name: "Urucum", sci: "Bixa orellana L.", family: "Bixaceae",
+    origin: "nativa",
+    originNote: "Nativa da América tropical. É cultivada e usada por povos indígenas do Brasil.",
+    tags: ["Uso tradicional"], roles: ["cobertura", "fauna"], fit: 3,
+    ecology: "Arbusto de crescimento rápido que se dá bem em áreas abertas. As flores costumam receber abelhas.",
+    culture: "As sementes são cobertas por uma tinta vermelha, usada por povos indígenas na pintura do corpo e no preparo de alimentos. O colorau da cozinha brasileira é feito com ela.",
+    seed: ["Sementes pequenas e numerosas, fáceis de tirar das cápsulas secas.", "Teste a germinação do lote antes de contar as sementes por bomba."],
+    bomb: "Boa candidata: sementes pequenas, fáceis de padronizar.",
+    caution: "A tinta mancha mãos e roupas. Use luvas."
   },
   {
-    id: "paubrasil", name: "Pau-brasil", sci: "Paubrasilia echinata", family: "Fabaceae",
-    tags: ["Restinga e Mata"], roles: ["conservacao", "fauna"], fit: 2, flags: ["fresca"],
-    ecology: "Árvore da Mata Atlântica ameaçada de extinção. A exploração do pau-brasil marcou o início da degradação do bioma.",
-    culture: "Dá nome ao país. A madeira teve valor tintorial e, depois, serviu para arcos de violino.",
-    seed: ["Sementes de viabilidade curta: semeie frescas."],
-    bomb: "Use com sementes frescas e bombas semeadas logo.",
+    id: "jenipapo", name: "Jenipapo", sci: "Genipa americana L.", family: "Rubiaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, com ocorrência em várias regiões. Confirme os registros na Bahia na Flora e Funga do Brasil.",
+    tags: ["Frutífera nativa", "Uso tradicional"], roles: ["fauna", "alimento"], fit: 2,
+    ecology: "Árvore de beira de rio e de matas úmidas. Os frutos carnosos são comidos por animais, que levam as sementes para longe.",
+    culture: "O fruto vira licor e doce. O suco do fruto verde tinge de azul-escuro a preto e é usado por povos indígenas na pintura do corpo.",
+    seed: ["Muitas sementes por fruto, que precisam ser lavadas para tirar a polpa.", "Alguns trabalhos relatam perda de viabilidade no armazenamento: faça teste de germinação antes."],
+    bomb: "Exige cuidado: use sementes recém-lavadas e confirme a germinação do lote. Vale pela importância cultural ligada ao saber indígena.",
+    caution: "O suco do fruto verde mancha a pele por dias."
+  },
+  {
+    id: "caju", name: "Cajueiro", sci: "Anacardium occidentale L.", family: "Anacardiaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, comum no litoral do Nordeste, inclusive em restingas.",
+    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 2, flags: ["grande"],
+    ecology: "Árvore de restinga e dunas, que aguenta solo arenoso e pobre. O pedúnculo (o \"caju\") é comido por vários animais.",
+    culture: "O pedúnculo é consumido in natura, em suco e em doce, e a castanha é muito apreciada. O nome vem do tupi.",
+    seed: ["A semente é a castanha, de casca dura. Use castanhas de frutos maduros.", "É grande: não cabe em bomba pequena."],
+    bomb: "Faça a bomba maior ou plante a castanha direto no solo.",
+    caution: "A casca da castanha tem óleo cáustico que queima a pele. Use luvas e não quebre a casca com a mão."
+  },
+  {
+    id: "caja", name: "Cajá", sci: "Spondias mombin L.", family: "Anacardiaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil. Confirme a ocorrência na Bahia na Flora e Funga do Brasil.",
+    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2, flags: ["grande"],
+    ecology: "Árvore grande, que costuma perder folhas na seca. Os frutos amarelos alimentam muitos animais.",
+    culture: "O cajá, também chamado de taperebá, é muito usado em suco, sorvete e polpa no Nordeste.",
+    seed: ["A semente fica dentro de um caroço duro e fibroso.", "A germinação costuma ser lenta e irregular: confirme tratamentos na literatura."],
+    bomb: "Caroço grande: faça a bomba maior ou plante direto.",
+    caution: ""
+  },
+  {
+    id: "sabia", name: "Sabiá", sci: "Mimosa caesalpiniifolia Benth.", family: "Fabaceae",
+    origin: "nativa",
+    originNote: "Nativa do Nordeste do Brasil, típica da Caatinga. Confirme se ocorre em Camaçari antes de usar na área.",
+    tags: ["Pioneira"], roles: ["cobertura", "solo", "fauna"], fit: 3, flags: ["dormencia"],
+    ecology: "Leguminosa de crescimento rápido, que fixa nitrogênio e cresce em solo pobre. É usada para recuperar áreas degradadas. As flores atraem abelhas.",
+    culture: "A madeira serve para estacas e lenha, e as folhas são forragem na seca do sertão.",
+    seed: ["Tegumento duro: trabalhos com a espécie recomendam quebrar a dormência, com água quente ou escarificação."],
+    bomb: "Boa candidata, depois de quebrar a dormência. Faça isso antes de moldar a bomba.",
+    caution: "Os ramos têm espinhos. Use luvas."
+  },
+  {
+    id: "maracujacaatinga", name: "Maracujá-da-caatinga", sci: "Passiflora cincinnata Mast.", family: "Passifloraceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, típica da Caatinga e do semiárido. Não é espécie de restinga.",
+    tags: ["Frutífera nativa", "PANC"], roles: ["fauna", "alimento"], fit: 2,
+    ecology: "Trepadeira de áreas abertas. As flores grandes costumam ser visitadas por abelhas grandes, como as mamangavas.",
+    culture: "O fruto é comido in natura e em suco, e é colhido por comunidades do semiárido.",
+    seed: ["Muitas sementes por fruto, cobertas por uma polpa que precisa ser lavada.", "Sementes de maracujá costumam ter germinação lenta e irregular."],
+    bomb: "Sementes pequenas, de bom encaixe. Reserve mais tempo de observação no ensaio.",
+    caution: ""
+  },
+  {
+    id: "pitomba", name: "Pitomba", sci: "Talisia esculenta (A.St.-Hil.) Radlk.", family: "Sapindaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, comum em quintais do Nordeste. Confirme a ocorrência na Bahia na Flora e Funga do Brasil.",
+    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca", "grande"],
+    ecology: "Árvore de porte médio. O fruto é comido por aves e mamíferos.",
+    culture: "O fruto, de polpa gelatinosa e agridoce, é comum em quintais e feiras do Nordeste.",
+    seed: ["Semente grande. Estudos indicam que as sementes do gênero perdem a viabilidade rápido.", "Semeie logo depois de tirar a polpa."],
+    bomb: "Só com semente fresca, e em bomba grande ou plantio direto.",
     caution: ""
   }
 ];
@@ -157,7 +153,27 @@ const ROLE_LABELS = {
 const MAIN_ROLES = ["cobertura", "solo", "fauna", "alimento"];
 
 const FIT_LABELS = ["Fora da bomba", "Só semente fresca", "Exige cuidado", "Boa candidata"];
-const TAGS = ["Todas", "Pioneira", "Restinga e Mata", "Frutífera nativa", "PANC"];
+const TAGS = ["Todas", "Nativa", "Introduzida", "Pioneira", "Restinga e Mata", "Frutífera nativa", "PANC", "Uso tradicional"];
+/* ---------- FOTOS DAS ESPÉCIES ----------
+   Coloque as fotos na pasta img/ (ao lado do index.html) e preencha aqui.
+   Se a foto não existir ou não carregar, o cartão volta ao desenho com a letra.
+   Use só fotos suas ou com licença livre (ex.: Wikimedia Commons, CC BY / CC BY-SA)
+   e SEMPRE escreva o crédito: autor, licença e link da página da foto.
+   Exemplo:
+     caupi: { src: "img/caupi.jpg", alt: "Vagens e flor do feijão-caupi",
+              credit: "Foto: Fulano, CC BY-SA 4.0, via Wikimedia Commons" },
+   Ids: caupi, maxixe, linguadevaca, urucum, jenipapo, caju, caja, sabia,
+        maracujacaatinga, pitomba
+------------------------------------------- */
+const PHOTOS = {
+  caupi: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
+    alt: "Feijão-caupi (Vigna unguiculata)",
+    credit: "Foto: [MyGardenLife], [licença]"
+  }
+};
+
+const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
 
 
 /* ---------- 3. FORMULAÇÕES ----------
@@ -196,7 +212,7 @@ const FORMULATIONS = [
     id: "F5", short: "+ Inóculo", name: "F4 com inóculo microbiano",
     parts: [["Argila", 3], ["Húmus ou composto", 1], ["Biochar moído", 0.5]], liquid: "Mucilagem de ora-pro-nóbis", extra: "Inóculo microbiano: defina com o professor",
     tests: ["res", "ret", "ger"],
-    desc: "Acrescenta a parte microbiológica. Exemplos: rizóbios para leguminosas que formam nódulos, como o ingá, ou o fungo Trichoderma, que protege contra fungos de solo. Use apenas produtos registrados e com orientação."
+    desc: "Acrescenta a parte microbiológica. Exemplos: rizóbios para leguminosas que formam nódulos, como o caupi e o sabiá, ou o fungo Trichoderma, que protege contra fungos de solo. Use apenas produtos registrados e com orientação."
   }
 ];
 
@@ -246,7 +262,7 @@ const BOMB_STEPS = [
 
 /* ---------- 6. ESPÉCIES SELECIONADAS, RESULTADOS E REGISTROS ----------
    SELECTED: espécies escolhidas para o ensaio (aparecem marcadas no guia).
-             Padrão: as de aptidão 3. Ajuste conforme a escolha da equipe.
+             Sugestão inicial: ajuste conforme a escolha da equipe.
    RESULTS:  medidas dos ensaios, publicadas para todos os visitantes.
              Comece vazio. Quando houver dados, digite-os na "Área da equipe"
              da página Resultados, clique em "Copiar dados para publicar" e
@@ -254,7 +270,7 @@ const BOMB_STEPS = [
    TESTIMONIES: registros feitos com as comunidades, SOMENTE com autorização.
              Formato: { name: "", community: "", practice: "", text: "" }
 ------------------------------------------- */
-const SELECTED = ["aroeira", "embauba", "mulungu", "araca", "jurubeba"];
+const SELECTED = ["caupi", "maxixe", "urucum", "sabia"];
 
 const RESULTS = [];
 
@@ -280,6 +296,9 @@ const SOURCES = {
     { t: "Bombas de sementes de castanha-do-Brasil (repositório do IFAP)", u: "https://repositorio.ifap.edu.br/bitstreams/5c5cd744-9d8d-42d4-b835-e3feb48ef839/download", n: "Desenho experimental com 3 tratamentos e 16 repetições. Germinação de 75%, 50% e 44%, sem diferença significativa (p = 0,177)." },
     { t: "Superação de dormência de sementes florestais (Embrapa, capítulo 5)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/299616/1/cap5SuperacaoDormencia0001.pdf", n: "Métodos de escarificação, água quente e imersão." },
     { t: "Restinga em Praia do Forte, Litoral Norte da Bahia (Revista Biotemas, 2012)", u: "https://periodicos.ufsc.br/index.php/biotemas/article/download/2175-7925.2012v25n1p31/20873/74801", n: "Espécies dominantes da restinga, incluindo Byrsonima blanchetiana. Famílias mais ricas: Myrtaceae, Rubiaceae e Malpighiaceae." },
+    { t: "Feijão-caupi no Brasil (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/974091/1/FRIJOLCAUPIBRASIL.pdf", n: "Origem africana, chegada ao Brasil pela Bahia no século XVI, fixação de nitrogênio e tolerância à seca." },
+    { t: "Maxixe, Horticultura Brasileira (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/133010/1/HorticulturaBrasileirav.16n.2p.1671711998.pdf", n: "Origem na África tropical, uso culinário e hábito da planta." },
+    { t: "Língua-de-vaca (Agrolink)", u: "https://www.agrolink.com.br/problema/lingua-de-vaca_348.html", n: "Rumex obtusifolius como planta invasora, com até 60 mil sementes por planta e dormência de anos." },
     { t: "Mata Atlântica na APA do Pratigi, Bahia (repositório da UFRB)", u: "https://ri.ufrb.edu.br/handle/123456789/2717", n: "342 espécies arbóreas em 162 hectares; Myrtaceae é a família mais rica." }
   ],
   consult: [
@@ -287,6 +306,7 @@ const SOURCES = {
     { t: "speciesLink", u: "https://specieslink.net", n: "Registros de coleta por município: use para checar Camaçari." },
     { t: "Kinupp e Lorenzi (2014). Plantas Alimentícias Não Convencionais (PANC) no Brasil", u: "", n: "Guia de identificação e usos das PANCs." },
     { t: "Lei nº 13.123/2015 (Lei da Biodiversidade)", u: "", n: "Regras para acesso ao conhecimento tradicional associado. Converse com o professor antes de registrar saberes." },
+    { t: "Iphan: Ofício das Baianas de Acarajé", u: "http://portal.iphan.gov.br", n: "Registro como patrimônio imaterial (2005). Confira o dossiê para citar." },
     { t: "INMET", u: "https://portal.inmet.gov.br", n: "Séries de chuva para definir a época de dispersão." }
   ]
 };
