@@ -422,6 +422,14 @@ input[type="checkbox"] { width: 1.1rem; height: 1.1rem; accent-color: var(--gree
 }
 .tile-letter { font-size: 4.8rem; font-weight: 800; line-height: 0.8; letter-spacing: -0.05em; }
 .tile-sci { max-width: 55%; font-family: var(--font-text); font-size: 0.85rem; font-style: italic; line-height: 1.25; text-align: right; }
+.tile { position: relative; overflow: hidden; }
+.tile > * { position: relative; }
+.tile > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tile.has-photo .tile-letter { visibility: hidden; }
+.tile.has-photo .tile-sci { padding: 0.15rem 0.45rem; background: rgb(255 255 255 / 0.85); color: #1b1b17; border-radius: 3px; }
+.modal-photo { margin: 0; }
+.modal-photo img { display: block; width: 100%; max-height: 18rem; object-fit: cover; }
+.modal-photo figcaption { padding: 0.35rem 1.6rem; font-family: var(--font-ui); font-size: 0.78rem; color: var(--muted); border-bottom: 1px solid var(--line); }
 .tile.pioneira { background: var(--t-pioneira); }
 .tile.restinga { background: var(--t-restinga); }
 .tile.fruta { background: var(--t-fruta); }
@@ -683,6 +691,8 @@ input[type="checkbox"] { width: 1.1rem; height: 1.1rem; accent-color: var(--gree
 /* painéis e blocos do guia */
 .selected-mark { display: block; margin-top: 0.5rem; font-family: var(--font-ui); font-size: 0.8rem; font-weight: 600; color: var(--urucum); }
 .tag.sel { border-color: var(--urucum); color: var(--urucum); }
+.tag.origin.nativa { border-color: var(--green); color: var(--green); }
+.tag.origin.introduzida { border-color: var(--clay); color: var(--ink); background: var(--t-pioneira); }
 
 .section-title.sub { margin-top: 2.6rem; }
 .how { margin: 0 0 1rem; font-size: 1rem; }
