@@ -169,7 +169,23 @@ const TAGS = ["Todas", "Nativa", "Introduzida", "Pioneira", "Restinga e Mata", "
 const PHOTOS = {
   caupi: {
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
-    alt: "Feijão-caupi (Vigna unguiculata)",
+    alt: "Vagens do feijão-caupi",
+    credit: "Foto: Nome do autor, CC BY-SA 4.0, via Wikimedia Commons"
+  },
+  maxixe: {
+    src: "https://www.sitiodamata.com.br/media/catalog/product/cache/bd7e41e8357e6ae06c7d33758afd4978/s/e/sementes-maxixe-cucumis-anguria_2nd.jpg",
+    alt: "Frutos de maxixe",
+    credit: "Foto: equipe do projeto"
+  },
+  linguadevaca: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKqPpPBk2PMG9rLMwjHt4xPHn-IRBZn8eJ5riWutEMW6c_eExYC3WZffJ&s=10",
+    alt: "Frutos da lingua-de-vaca",
+    credit: "Foto: equipe do projeto"
+  },
+  urucum: {
+    src: "https://www.oficinadopaisagista.com.br/wp-content/uploads/2022/09/Urucum-Bixa-orellana33-768x1024.jpeg",
+    alt: "Cápsulas de urucum",
+    credit: "Foto: equipe do projeto"
   }
 };
 
