@@ -332,20 +332,8 @@ const PHOTOS = {
     credit: ""
   },
 };
-  /* ---- Fotos de espécies que saíram do guia: não aparecem no site,
-          mas os links ficam guardados aqui. ---- */
-  caupi: {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
-    alt: "Vagens do feijão-caupi",
-    credit: ""
-  },
-  urucum: {
-    src: "https://www.oficinadopaisagista.com.br/wp-content/uploads/2022/09/Urucum-Bixa-orellana33-768x1024.jpeg",
-    alt: "Cápsulas de urucum",
-    credit: ""
-  }
-};
-
+  
+  
 const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
 
 
