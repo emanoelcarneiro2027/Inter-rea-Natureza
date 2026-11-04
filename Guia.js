@@ -21,10 +21,6 @@ const STORE = {
   theme: "gb-tema",
   confirmed: "gb-confirmadas",
   mix: "gb-mistura",
-<<<<<<< HEAD
-=======
-  checks: "gb-listas"
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 };
 const SCREENS = ["inicio", "especies", "saberes", "resultados", "dispersao", "sobre"];
 
@@ -67,10 +63,6 @@ const state = {
   openId: null,
   confirmed: new Set(load(STORE.confirmed, []).filter((id) => findSpecies(id))),
   mix: new Set(load(STORE.mix, []).filter((id) => findSpecies(id) && findSpecies(id).fit > 0)),
-<<<<<<< HEAD
-=======
-  checks: load(STORE.checks, {}),
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
   lastFocus: null
 };
 
@@ -384,7 +376,6 @@ function renderBioma() {
     <p class="note measure">${esc(BIOMA.limite)}</p>`;
 }
 
-<<<<<<< HEAD
 /* ---------- 6b. CARROSSEL DA BOMBA ---------- */
 function renderGaleria() {
   const root = $("galeriaRoot");
@@ -521,75 +512,6 @@ function germinationRows() {
     else if (!Number.isInteger(grown) || grown < 0 || grown > sown) problems.push(`Linha ${line}: "germinadas" precisa ser um inteiro entre 0 e ${sown}.`);
     else good.push({ f, sp: findSpecies(r.especie), speciesId: r.especie, sown, grown, pct: (grown / sown) * 100 });
   });
-=======
-/* ---------- 6a. RESULTADOS: pH E RESISTÊNCIA HÍDRICA ---------- */
-function renderMetodo() {
-  const ph = $("phRoot");
-  const agua = $("aguaRoot");
-  const metodo = $("metodoRoot");
-  if (metodo) {
-    metodo.innerHTML = `
-      <p class="measure">${esc(METODO.intro)}</p>
-      <dl class="method">
-        <div><dt>Sementes</dt><dd>${esc(METODO.sementes)}</dd></div>
-        <div><dt>Materiais</dt><dd>${esc(METODO.materiais)}</dd></div>
-        <div><dt>Secagem</dt><dd>${esc(METODO.secagem)}</dd></div>
-        <div><dt>Análise</dt><dd>${esc(METODO.analise)}</dd></div>
-      </dl>`;
-  }
-  if (ph) {
-    ph.innerHTML = `
-      <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Amostra (cerca de 4 g)</th><th scope="col" class="num">pH</th></tr></thead>
-        <tbody>${RESULT_PH.map((r) => `<tr><th scope="row">${esc(r.amostra)}</th><td class="num"><strong>${fmt(r.ph, 2)}</strong></td></tr>`).join("")}</tbody>
-      </table></div>
-      <p class="muted measure">Faixa de referência para a germinação, segundo a equipe: ${esc(PH_FAIXA)}.</p>
-      <p class="measure">${esc(PH_TEXTO)}</p>`;
-  }
-  if (agua) {
-    const rows = RESULT_AGUA.map((r) => {
-      const f = findFormulation(r.formulacao);
-      const d = r.depois - r.antes;
-      const pct = (d / r.antes) * 100;
-      const sign = (n, dig) => (n > 0 ? "+" : n < 0 ? "−" : "") + fmt(Math.abs(n), dig);
-      return `<tr>
-        <th scope="row">${esc(r.formulacao)}, ${esc(f ? f.short : "")}</th>
-        <td class="num">${fmt(r.antes, 2)}</td><td class="num">${fmt(r.depois, 2)}</td>
-        <td class="num"><strong>${sign(d, 2)}</strong></td><td class="num">${sign(pct, 1)}%</td>
-      </tr>`;
-    }).join("");
-    agua.innerHTML = `
-      <div class="table-wrap"><table class="table">
-        <thead><tr><th scope="col">Formulação</th><th scope="col" class="num">Massa antes (g)</th><th scope="col" class="num">Massa depois (g)</th><th scope="col" class="num">Variação (g)</th><th scope="col" class="num">Variação (%)</th></tr></thead>
-        <tbody>${rows}</tbody>
-      </table></div>
-      <p class="muted measure">Imersão em 200 mL de água por 5 minutos. Variação = depois − antes.</p>
-      <p class="measure">${esc(AGUA_TEXTO)}</p>`;
-  }
-  const sel = findFormulation(FORMULACAO_SELECIONADA);
-  const conc = $("selecionadaRoot");
-  if (conc && sel) {
-    conc.innerHTML = `<p class="measure">Pela comparação descritiva do desempenho estrutural e germinativo, a <strong>${esc(sel.id)}, ${esc(sel.name.toLowerCase())}</strong>, foi a selecionada.</p>`;
-  }
-}
-
-/* ---------- 6. RESULTADOS DE GERMINAÇÃO ----------
-   Lê a lista GERMINACAO do GuiaDados.js. A única conta é
-   germinadas ÷ semeadas × 100. Linhas com erro são avisadas na tela. */
-function germinationRows() {
-  const good = [];
-  const problems = [];
-  (Array.isArray(GERMINACAO) ? GERMINACAO : []).forEach((r, i) => {
-    const line = i + 1;
-    const f = r && findFormulation(r.formulacao);
-    const sown = Number(r && r.semeadas);
-    const grown = Number(r && r.germinadas);
-    if (!f) problems.push(`Linha ${line}: formulação "${r && r.formulacao}" não existe (use F1, F2 ou F3).`);
-    else if (!Number.isInteger(sown) || sown < 1) problems.push(`Linha ${line}: "semeadas" precisa ser um número inteiro maior que zero.`);
-    else if (!Number.isInteger(grown) || grown < 0 || grown > sown) problems.push(`Linha ${line}: "germinadas" precisa ser um inteiro entre 0 e ${sown}.`);
-    else good.push({ f, sp: findSpecies(r.especie), speciesId: r.especie, sown, grown, pct: (grown / sown) * 100 });
-  });
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
   return { good, problems };
 }
 
@@ -663,15 +585,6 @@ function renderGerminacao() {
     <p class="muted measure">Germinação (%) = germinadas ÷ semeadas × 100. Os números vêm das medidas da equipe. Chuva, solo e animais no campo mudam o resultado fora do laboratório.</p>`;
 }
 
-<<<<<<< HEAD
-=======
-
-/* ---------- 7. DISPERSÃO ---------- */
-function syncChecks() {
-  document.querySelectorAll("input[data-check]").forEach((box) => { box.checked = Boolean(state.checks[box.dataset.check]); });
-}
-
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 
 /* ---------- 8. PROJETO ---------- */
 function renderTeam() {
@@ -765,13 +678,8 @@ function init() {
 
   renderBioma();
   renderMetodo();
-<<<<<<< HEAD
   renderGaleria();
   renderGerminacao();
-=======
-  renderGerminacao();
-  syncChecks();
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
   renderTeam();
   renderSources();
   renderSpecies();
@@ -780,4 +688,3 @@ function init() {
 }
 
 init();
-
