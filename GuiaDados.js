@@ -244,81 +244,6 @@ const TAGS = ["Todas", "Nativa", "Introduzida", "Pioneira", "Restinga e Mata", "
    Ids: aroeira, mangaba, murici, cambui, pitanga, araca, mulungu, inga, oranobis,
         garu, maxixe, linguadevaca, jenipapo, caja, pitomba, caju, maracujacaatinga
 ------------------------------------------- */
-<<<<<<< HEAD
-
- 
-=======
-const PHOTOS = {
-  /* ---- Espécies atuais do guia (preencha o src e o credit de cada uma) ---- */
-  aroeira:          { src: "", alt: "Frutos da aroeira-vermelha",        credit: "" },
-  mangaba:          { src: "", alt: "Frutos da mangaba",                 credit: "" },
-  murici:           { src: "", alt: "Frutos do murici",                  credit: "" },
-  cambui:           { src: "", alt: "Frutos do cambuí",                  credit: "" },
-  pitanga:          { src: "", alt: "Frutos da pitanga",                 credit: "" },
-  araca:            { src: "", alt: "Frutos do araçá",                   credit: "" },
-  mulungu:          { src: "", alt: "Flores do mulungu",                 credit: "" },
-  inga:             { src: "", alt: "Vagens do ingá-feijão",             credit: "" },
-  oranobis:         { src: "", alt: "Folhas da ora-pro-nóbis",           credit: "" },
-  garu:             { src: "", alt: "Fruto do garu",                     credit: "" },
-  jenipapo:         { src: "", alt: "Fruto do jenipapo",                 credit: "" },
-  caja:             { src: "", alt: "Frutos do cajá",                    credit: "" },
-  pitomba:          { src: "", alt: "Frutos da pitomba",                 credit: "" },
-  caju:             { src: "", alt: "Cajueiro com caju e castanha",      credit: "" },
-  maracujacaatinga: { src: "", alt: "Fruto do maracujá-da-caatinga",     credit: "" },
-  maxixe: {
-    src: "https://www.sitiodamata.com.br/media/catalog/product/cache/bd7e41e8357e6ae06c7d33758afd4978/s/e/sementes-maxixe-cucumis-anguria_2nd.jpg",
-    alt: "Frutos de maxixe",
-    credit: ""
-  },
-  linguadevaca: {   // foto que você escolheu antes
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKqPpPBk2PMG9rLMwjHt4xPHn-IRBZn8eJ5riWutEMW6c_eExYC3WZffJ&s=10",
-    alt: "Língua-de-vaca",
-    credit: ""
-  },
-
-  /* ---- Fotos de espécies que saíram do guia: não aparecem no site,
-          mas os links ficam guardados aqui. ---- */
-  caupi: {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
-    alt: "Vagens do feijão-caupi",
-    credit: ""
-  },
-  urucum: {
-    src: "https://www.oficinadopaisagista.com.br/wp-content/uploads/2022/09/Urucum-Bixa-orellana33-768x1024.jpeg",
-    alt: "Cápsulas de urucum",
-    credit: ""
-  }
-};
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
-
-const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
-
-
-/* ---------- 2b. O BIOMA ----------
-   Caracterização do ambiente. Cada dado tem a fonte ao lado (seção 8).
-   Edite os textos aqui; o site monta a seção sozinho. */
-const BIOMA = {
-  titulo: "Mata Atlântica e restinga no litoral norte de Salvador",
-  resumo: "Camaçari fica no litoral da Bahia, na Região Metropolitana de Salvador, dentro do bioma Mata Atlântica. Na faixa costeira desse bioma ocorrem as restingas, formações que crescem sobre areia e são conhecidas pela fragilidade.",
-  fatos: [
-    { rotulo: "Localização", valor: "12°41′ S, 38°19′ O", nota: "Região Metropolitana de Salvador, altitude de 36 m" },
-    { rotulo: "Área do município", valor: "784,7 km²", nota: "Segundo a Wikipedia" },
-    { rotulo: "Temperatura média anual", valor: "24,8 °C", nota: "Máxima média de 29,6 °C e mínima média de 21,0 °C (INMET, 1981 a 2010)" },
-    { rotulo: "Chuva por ano", valor: "1.736,6 mm", nota: "Cerca de 152 dias com chuva (INMET, 1981 a 2010)" },
-    { rotulo: "Mês mais chuvoso", valor: "Maio", nota: "244,4 mm em média" },
-    { rotulo: "Mês mais seco", valor: "Dezembro", nota: "74,9 mm em média" },
-    { rotulo: "Umidade relativa do ar", valor: "81,1 %", nota: "Média anual (INMET, 1981 a 2010)" }
-  ],
-  ambientes: [
-    { nome: "A restinga", texto: "É uma ecorregião da Mata Atlântica que ocupa a costa atlântica do Nordeste ao Sudeste. Cresce sobre solo arenoso, ácido e pobre em nutrientes, com árvores e arbustos de porte médio adaptados à seca e à falta de nutrientes. Há enclaves de restinga ao norte e ao sul de Salvador." },
-    { nome: "Fisionomias da restinga vizinha", texto: "Num levantamento em Praia do Forte (Mata de São João, no mesmo litoral norte), foram encontradas 68 espécies. As famílias com mais espécies foram Myrtaceae, Rubiaceae e Malpighiaceae. Duas comunidades se distinguiram: a restinga em moitas e a mata de restinga. Os solos vêm da Formação Barreiras e as chuvas somam cerca de 2.000 mm por ano, com maior concentração de março a agosto." }
-  ],
-  ameacas: "A restinga é frágil e sofre com o desmatamento. A retirada da camada superficial do solo pode retardar a sucessão natural por longos períodos. A ecorregião das restingas da costa atlântica está classificada como em estado crítico, com cerca de 14% de sua área protegida. No litoral norte, a ocupação se intensificou com o turismo depois da Linha Verde (BA-099).",
-  implicacao: "Para a bomba de sementes, isso indica três cuidados: usar espécies da restinga e da Mata Atlântica, esperar o período chuvoso e proteger o solo, porque a camada superficial é difícil de recuperar. Em Camaçari, a chuva é mais forte em maio e mais fraca em dezembro. Confira a série do INMET antes de escolher a data.",
-  limite: "As fontes consultadas dão o clima e a localização de Camaçari, mas os estudos de vegetação encontrados são de Praia do Forte, no município vizinho de Mata de São João. A vegetação específica de Camaçari, como dunas, manguezais e unidades de conservação do município, deve ser conferida com o INEMA e a prefeitura."
-};
-
-<<<<<<< HEAD
 const PHOTOS = {
   /* ---- Espécies atuais do guia (preencha o src e o credit de cada uma) ---- */
   aroeira:          { 
@@ -407,8 +332,47 @@ const PHOTOS = {
     credit: ""
   },
 };
-=======
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
+  /* ---- Fotos de espécies que saíram do guia: não aparecem no site,
+          mas os links ficam guardados aqui. ---- */
+  caupi: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
+    alt: "Vagens do feijão-caupi",
+    credit: ""
+  },
+  urucum: {
+    src: "https://www.oficinadopaisagista.com.br/wp-content/uploads/2022/09/Urucum-Bixa-orellana33-768x1024.jpeg",
+    alt: "Cápsulas de urucum",
+    credit: ""
+  }
+};
+
+const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
+
+
+/* ---------- 2b. O BIOMA ----------
+   Caracterização do ambiente. Cada dado tem a fonte ao lado (seção 8).
+   Edite os textos aqui; o site monta a seção sozinho. */
+const BIOMA = {
+  titulo: "Mata Atlântica e restinga no litoral norte de Salvador",
+  resumo: "Camaçari fica no litoral da Bahia, na Região Metropolitana de Salvador, dentro do bioma Mata Atlântica. Na faixa costeira desse bioma ocorrem as restingas, formações que crescem sobre areia e são conhecidas pela fragilidade.",
+  fatos: [
+    { rotulo: "Localização", valor: "12°41′ S, 38°19′ O", nota: "Região Metropolitana de Salvador, altitude de 36 m" },
+    { rotulo: "Área do município", valor: "784,7 km²", nota: "Segundo a Wikipedia" },
+    { rotulo: "Temperatura média anual", valor: "24,8 °C", nota: "Máxima média de 29,6 °C e mínima média de 21,0 °C (INMET, 1981 a 2010)" },
+    { rotulo: "Chuva por ano", valor: "1.736,6 mm", nota: "Cerca de 152 dias com chuva (INMET, 1981 a 2010)" },
+    { rotulo: "Mês mais chuvoso", valor: "Maio", nota: "244,4 mm em média" },
+    { rotulo: "Mês mais seco", valor: "Dezembro", nota: "74,9 mm em média" },
+    { rotulo: "Umidade relativa do ar", valor: "81,1 %", nota: "Média anual (INMET, 1981 a 2010)" }
+  ],
+  ambientes: [
+    { nome: "A restinga", texto: "É uma ecorregião da Mata Atlântica que ocupa a costa atlântica do Nordeste ao Sudeste. Cresce sobre solo arenoso, ácido e pobre em nutrientes, com árvores e arbustos de porte médio adaptados à seca e à falta de nutrientes. Há enclaves de restinga ao norte e ao sul de Salvador." },
+    { nome: "Fisionomias da restinga vizinha", texto: "Num levantamento em Praia do Forte (Mata de São João, no mesmo litoral norte), foram encontradas 68 espécies. As famílias com mais espécies foram Myrtaceae, Rubiaceae e Malpighiaceae. Duas comunidades se distinguiram: a restinga em moitas e a mata de restinga. Os solos vêm da Formação Barreiras e as chuvas somam cerca de 2.000 mm por ano, com maior concentração de março a agosto." }
+  ],
+  ameacas: "A restinga é frágil e sofre com o desmatamento. A retirada da camada superficial do solo pode retardar a sucessão natural por longos períodos. A ecorregião das restingas da costa atlântica está classificada como em estado crítico, com cerca de 14% de sua área protegida. No litoral norte, a ocupação se intensificou com o turismo depois da Linha Verde (BA-099).",
+  implicacao: "Para a bomba de sementes, isso indica três cuidados: usar espécies da restinga e da Mata Atlântica, esperar o período chuvoso e proteger o solo, porque a camada superficial é difícil de recuperar. Em Camaçari, a chuva é mais forte em maio e mais fraca em dezembro. Confira a série do INMET antes de escolher a data.",
+  limite: "As fontes consultadas dão o clima e a localização de Camaçari, mas os estudos de vegetação encontrados são de Praia do Forte, no município vizinho de Mata de São João. A vegetação específica de Camaçari, como dunas, manguezais e unidades de conservação do município, deve ser conferida com o INEMA e a prefeitura."
+};
+
 
 /* ---------- 3. FORMULAÇÕES TESTADAS (metodologia da equipe) ----------
    parts: [material, quantidade por bomba]
@@ -469,7 +433,6 @@ const GERM_TEXTO = "As duas formulações que seguiram para o ensaio (F2 e F3) a
 const FORMULACAO_SELECIONADA = "F2";
 
 
-<<<<<<< HEAD
 /* ---------- 3c. FOTOS DA BOMBA (carrossel na página Resultados) ----------
    Uma linha por imagem da bomba de sementes pronta. As setas do site passam
    de uma para a outra.
@@ -494,9 +457,6 @@ const FOTOS_PROJETO = [
     credit: "" }
 ];
 
-
-=======
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 /* ---------- 4. CAMADAS DO DIAGRAMA (formulação selecionada, F2) ---------- */
 const LAYERS = {
   argila: {
@@ -541,11 +501,6 @@ const BOMB_STEPS = [
                germinadas: quantas germinaram (nunca mais que as semeadas)
                O site calcula sozinho a porcentagem (germinadas ÷ semeadas × 100).
                Sem linhas aqui, o site mostra só o resultado descritivo (GERM_TEXTO).
-<<<<<<< HEAD
-=======
-   TESTIMONIES: registros feitos com as comunidades, SOMENTE com autorização.
-               Formato: { name: "", community: "", practice: "", text: "" }
->>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 ------------------------------------------- */
 const SELECTED = ["maxixe", "linguadevaca"];
 
