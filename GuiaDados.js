@@ -21,35 +21,136 @@
    flags (opcional, alimenta os avisos do montador):
          fresca (semente recalcitrante) | dormencia | luz | grande
    roles: cobertura | solo | fauna | alimento | conservacao
-   origin: nativa | introduzida (diga sempre a origem; espécie introduzida
-          não deve ser espalhada em vegetação nativa) · originNote: texto da origem
+   origin: nativa | introduzida (a maioria é nativa; maxixe e língua-de-vaca são
+          introduzidas, estão aqui por terem sido usadas nos ensaios, e não devem
+          ser espalhadas em vegetação nativa)
+          · originNote: texto da origem, com a fonte
    tags:  Pioneira | Restinga e Mata | Frutífera nativa | PANC | Uso tradicional
-          (Nativa e Introduzida vêm do campo origin e aparecem como filtro)
+          (a origem aparece na ficha; "Nativa" e "Introduzida" podem voltar a TAGS)
    Os textos são resumos para estudo. Confirme cada dado nas
    fontes (seção 8) antes de citá-lo no artigo.
 ------------------------------------------- */
 const SPECIES = [
   {
-    id: "caupi", name: "Feijão-caupi", sci: "Vigna unguiculata (L.) Walp.", family: "Fabaceae",
-    origin: "introduzida",
-    originNote: "Veio da África. Segundo a Embrapa, chegou ao Brasil na segunda metade do século XVI, pela Bahia, e dali se espalhou pelo país.",
-    tags: ["Uso tradicional"], roles: ["cobertura", "solo", "alimento"], fit: 3,
-    ecology: "Leguminosa que se associa a bactérias do solo e fixa nitrogênio. Cresce em solos pobres e aguenta falta de água, por isso é muito usada para cobrir e melhorar a terra.",
-    culture: "É o feijão-de-corda, feijão-macassar ou feijão-fradinho. O fradinho é a base do acarajé, e o Ofício das Baianas de Acarajé foi registrado pelo Iphan como patrimônio imaterial em 2005.",
-    seed: ["Semente grande e uniforme, fácil de contar e de envolver.", "Costuma germinar em poucos dias. Confirme no seu próprio teste de germinação."],
-    bomb: "Boa candidata para o primeiro ensaio: com ela dá para comparar as formulações em pouco tempo. É anual, então serve mais para cobrir o solo e melhorar a terra do que para restaurar mata.",
-    caution: "Não consuma o feijão cru: ele precisa de cozimento."
+    id: "aroeira", name: "Aroeira-vermelha", sci: "Schinus terebinthifolia Raddi", family: "Anacardiaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, do Rio Grande do Norte ao Rio Grande do Sul, segundo a Embrapa. Aparece em listas de plantas da restinga da Bahia.",
+    tags: ["Pioneira", "Restinga e Mata", "PANC"], roles: ["cobertura", "fauna"], fit: 3,
+    ecology: "Pioneira ou secundária inicial, que ocupa terrenos abandonados e beiras de estrada. Abelhas e outros insetos visitam as flores, e aves comem os frutos e levam as sementes para longe.",
+    culture: "Os frutos vermelhos são a pimenta-rosa, e um estudo de PANCs da restinga de Maraú (BA) lista o fruto como condimento. A madeira vira lenha e moirão, e a planta já foi usada em curtume e perfumaria.",
+    seed: ["Retirar a polpa do fruto costuma ajudar na germinação. Confirme no seu teste.", "Sementes pequenas, fáceis de envolver na argila."],
+    bomb: "Boa candidata: é pioneira e a Embrapa aponta a recuperação de áreas degradadas como seu uso principal.",
+    caution: "Há relatos de dermatite em pessoas sensíveis: use luvas. Fora da área natural ela pode virar invasora."
+  },
+  {
+    id: "mangaba", name: "Mangaba", sci: "Hancornia speciosa Gomes", family: "Apocynaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil. A Embrapa registra ocorrência natural na Bahia, em campo de restinga, mata de tabuleiro e dunas.",
+    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca"],
+    ecology: "Cresce em solos arenosos, ácidos e pobres, como os da restinga e do tabuleiro. A área natural sofre pressão da cana, do eucalipto e do setor imobiliário.",
+    culture: "O fruto vira suco, sorvete, geleia, doce e licor. As catadoras de mangaba, em geral mulheres, são reconhecidas como grupo cultural diferenciado em Sergipe, e o produto está na lista da sociobiodiversidade da Conab.",
+    seed: ["Sementes recalcitrantes: perdem rápido a capacidade de germinar.", "Para chegar a cerca de 90%, a Embrapa indica semear em até 4 dias depois de extrair e lavar, sem deixar secar. A emergência começa em cerca de 21 dias."],
+    bomb: "Só com semente fresca, em bomba semeada logo. Respeite o extrativismo: pegue frutos caídos e deixe parte para a fauna e para as catadoras.",
+    caution: ""
+  },
+  {
+    id: "murici", name: "Murici", sci: "Byrsonima blanchetiana Miq.", family: "Malpighiaceae",
+    origin: "nativa",
+    originNote: "Espécie da restinga. Está entre as de maior importância na restinga em moitas de Praia do Forte, no Litoral Norte da Bahia, segundo a Revista Biotemas (2012).",
+    tags: ["Restinga e Mata", "Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2,
+    ecology: "Praia do Forte fica ao lado de Camaçari e tem restinga parecida. O murici é uma das espécies que mais pesam na estrutura dessa vegetação.",
+    culture: "As espécies de Byrsonima são chamadas de muricis, e seus frutos são consumidos no Nordeste.",
+    seed: ["Endocarpo duro e germinação lenta e irregular são relatados em espécies do gênero.", "Há pouca informação específica para esta espécie."],
+    bomb: "Bom tema de experimento: use sementes bem limpas e reserve mais tempo de observação.",
+    caution: ""
+  },
+  {
+    id: "cambui", name: "Cambuí", sci: "Myrciaria floribunda (H.West ex Willd.) O.Berg", family: "Myrtaceae",
+    origin: "nativa",
+    originNote: "Nativa. A Embrapa registra ocorrência na Bahia, em restinga e na transição para a Mata Atlântica. Está entre as espécies de maior importância na restinga de Praia do Forte (Revista Biotemas, 2012), vizinha de Camaçari.",
+    tags: ["Restinga e Mata", "Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2, flags: ["fresca"],
+    ecology: "Aves e primatas comem o fruto e espalham as sementes. Abelhas visitam as flores. Na restinga de Praia do Forte, é uma das espécies que mais pesam na estrutura da mata.",
+    culture: "O fruto maduro é comido ao natural e vira licor, suco, refresco, geleia e sorvete. Segundo a Embrapa, é rico em pró-vitamina A.",
+    seed: ["Lave as sementes para tirar a mucilagem.", "Recém-colhidas, germinam em 20 a 30 dias. Guardadas, podem levar de 180 a 365 dias. Em um estudo, tirar o tegumento subiu a germinação de 30% para 70%."],
+    bomb: "Exige cuidado: use semente fresca, confirme a germinação do lote e reserve tempo longo de observação.",
+    caution: ""
+  },
+  {
+    id: "pitanga", name: "Pitanga", sci: "Eugenia uniflora L.", family: "Myrtaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil. A Embrapa lista a Bahia entre os 13 estados de ocorrência natural. Myrtaceae é a família mais rica nas florestas e restingas da Bahia estudadas.",
+    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca"],
+    ecology: "Ocorre em várias formações da Mata Atlântica e pode ser plantada a pleno sol, em plantio puro ou misto. Rebrota pelos rizomas e forma touceiras. Aves e mamíferos comem o fruto e espalham as sementes.",
+    culture: "O fruto, muito apreciado, é comido ao natural ou em suco. O Nordeste é um dos maiores produtores do suco industrializado.",
+    seed: ["Sementes recalcitrantes: começam a perder a germinação de 15 a 20 dias depois da colheita.", "Não precisam de tratamento. A germinação chega a 87% e a emergência leva de 18 a 34 dias, segundo a Embrapa."],
+    bomb: "Só com semente fresca, em bomba semeada logo depois da colheita.",
+    caution: ""
+  },
+  {
+    id: "araca", name: "Araçá", sci: "Psidium guineense Sw.", family: "Myrtaceae",
+    origin: "nativa",
+    originNote: "Nativa da América do Sul. A Embrapa cita a Bahia na distribuição e aponta restingas, tabuleiros e capoeiras como habitat, no litoral e na Zona da Mata do Nordeste.",
+    tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 3,
+    ecology: "Abelhas polinizam as flores, que oferecem pólen. Mamíferos como quati e cachorro-do-mato comem o fruto e espalham as sementes. Moscas-das-frutas costumam atacar o fruto.",
+    culture: "O fruto é comido ao natural e vira araçazada, doce, suco, sorvete, licor e geleia.",
+    seed: ["Cada fruto tem de 22 a 100 sementes (às vezes até 250), de casca dura.", "Extraia de frutos maduros, lave, peneire e seque à sombra. Em geral, germinam em 10 a 15 dias, segundo a Embrapa."],
+    bomb: "Boa candidata: muitas sementes pequenas, fáceis de padronizar, e fruto que atrai fauna.",
+    caution: ""
+  },
+  {
+    id: "mulungu", name: "Mulungu", sci: "Erythrina velutina Willd.", family: "Fabaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil. A Embrapa lista a Bahia, incluindo o sertão de Canudos, na Caatinga, e também brejos de altitude da Mata Atlântica. A Embrapa não cita restinga.",
+    tags: ["Pioneira"], roles: ["cobertura", "solo", "fauna"], fit: 3, flags: ["dormencia"],
+    ecology: "Pioneira que gosta de sol e forma nódulos com bactérias fixadoras de nitrogênio. A Embrapa recomenda para plantios mistos em áreas degradadas. Abelhas e mamangavas visitam as flores, e as aves ajudam a espalhar as sementes.",
+    culture: "A casca e os frutos têm uso popular no Nordeste, mas a eficácia e a segurança não foram comprovadas. As flores são comestíveis e as sementes viram colares e pulseiras.",
+    seed: ["A semente tem dormência: o tegumento não deixa passar água.", "Depois de superada, a germinação leva de 7 a 16 dias e varia de 19% a 87%, segundo a Embrapa."],
+    bomb: "Boa candidata, depois de quebrar a dormência. Faça isso antes de moldar a bomba.",
+    caution: "As sementes e a casca têm alcaloide e são venenosas. Mantenha longe de crianças e animais, e não faça colares com elas sem cuidado."
+  },
+  {
+    id: "inga", name: "Ingá-feijão", sci: "Inga laurina (Sw.) Willd.", family: "Fabaceae",
+    origin: "nativa",
+    originNote: "Nativa. Uma tabela da Embrapa lista Inga laurina com ocorrência na Bahia e registro de nodulação, e inclui outras espécies de ingá baianas.",
+    tags: ["Frutífera nativa"], roles: ["solo", "fauna", "alimento"], fit: 2,
+    ecology: "Leguminosa que forma nódulos com bactérias fixadoras de nitrogênio, o que melhora o solo. A Embrapa vê potencial das leguminosas para plantios de restauração.",
+    culture: "O fruto, a vagem, tem polpa branca e doce que é comida ao natural. É comum em quintais.",
+    seed: ["As sementes de muitas espécies de ingá não aceitam secagem. Confirme no seu lote.", "Faça um teste de germinação antes de contar as sementes por bomba."],
+    bomb: "Exige cuidado: use semente recém-tirada do fruto. Por ser leguminosa, associa-se a bactérias fixadoras de nitrogênio, o que pode ser testado em etapa futura.",
+    caution: ""
+  },
+  {
+    id: "oranobis", name: "Ora-pro-nóbis", sci: "Pereskia aculeata Mill.", family: "Cactaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, mas não endêmica. A Embrapa lista a Bahia, em florestas ciliares, restingas e Mata Atlântica.",
+    tags: ["PANC", "Restinga e Mata"], roles: ["alimento"], fit: 0,
+    ecology: "Cacto trepador de florestas ciliares, restingas e afloramentos rochosos. Prefere terras de áridas a levemente áridas.",
+    culture: "É uma PANC conhecida como \"carne vegetal\", e aparece entre as mais consumidas nos estudos de restinga de Maraú e de Jandaíra, na Bahia. As folhas têm de 17,4% a 25,4% de proteína bruta na massa seca, e a planta tem mucilagem. Em Sabará (MG) há um festival anual desde 1997.",
+    seed: ["A propagação mais usada é por estacas de 20 a 30 cm, com cerca de 2/3 enterradas.", "Também pode ser por semente, mas é menos comum."],
+    bomb: "Fica fora da bomba como semente. Propaga-se por estacas.",
+    caution: "Tem espinhos nos ramos: use luvas na colheita."
+  },
+  {
+    id: "garu", name: "Garu", sci: "Cereus fernambucensis Lem.", family: "Cactaceae",
+    origin: "nativa",
+    originNote: "Nativa e endêmica da Mata Atlântica, segundo um estudo de PANCs da restinga de Maraú (BA). Esse estudo mistura dois nomes científicos para o garu: confirme a identificação com o professor e na Flora e Funga do Brasil.",
+    tags: ["PANC", "Restinga e Mata"], roles: ["alimento"], fit: 2,
+    ecology: "Cacto da restinga baiana. Os estudos consultados não detalham o papel ecológico da espécie.",
+    culture: "Moradores de Maraú e de Jandaíra, na Bahia, comem o fruto, chamado de garu ou girá. Em Jandaíra, ele é consumido com frequência.",
+    seed: ["Não achei dados de germinação nas fontes lidas.", "Faça o seu próprio teste de germinação antes de montar as bombas."],
+    bomb: "Exige cuidado: trate como espécie a testar. Pode virar tema da pesquisa.",
+    caution: "Cactos têm espinhos: use luvas. Confirme a identificação antes de comer qualquer fruto."
   },
   {
     id: "maxixe", name: "Maxixe", sci: "Cucumis anguria L.", family: "Cucurbitaceae",
     origin: "introduzida",
-    originNote: "Originário da África tropical, segundo a Embrapa. Hoje é um alimento de regiões de forte influência africana no Brasil, como o Nordeste.",
-    tags: ["PANC"], roles: ["cobertura", "alimento"], fit: 2,
-    ecology: "Trepadeira rasteira, anual, que cobre o solo com rapidez. É rústica e tolera calor e chuva forte. As flores recebem visita de abelhas.",
-    culture: "O fruto, verde e com espinhos macios, é comido cozido, cru em salada ou em conserva. Está na mesa de muitas famílias do Nordeste.",
-    seed: ["Sementes achatadas, em grande número dentro do fruto.", "O fruto fica pronto para colher uns 55 a 65 dias depois da semeadura."],
-    bomb: "Funciona melhor em horta comunitária do que em restauração de mata. As sementes cabem na bomba, mas teste o encaixe e o tamanho da esfera.",
-    caution: "É espécie introduzida: não espalhe em restinga ou mata nativa preservada."
+    originNote: "Cultura de origem africana (Embrapa), muito cultivada no Norte e no Nordeste do Brasil. Confirme o status no Brasil na Flora e Funga do Brasil.",
+    tags: ["PANC", "Uso tradicional"], roles: ["alimento"], fit: 0,
+    ecology: "Trepadeira anual de cultivo, que cresce em hortas e roçados. Não é espécie nativa da vegetação do município e não foi escolhida para restaurar áreas degradadas.",
+    culture: "O fruto é ingrediente da culinária nordestina, como na maxixada, e pode ser comido cru em salada no lugar do pepino. Segundo a Embrapa, é uma hortaliça pouco conhecida fora das regiões onde é tradicional.",
+    seed: ["Em estudo da Embrapa com 23 acessos de bancos de germoplasma, a germinação começou entre 4 e 66 dias após elevar a temperatura a 26 °C, e em 42,8% dos casos já na primeira semana.", "As sementes têm dormência fisiológica sensível à luz e à temperatura (Yokoyama e Silva Júnior, 1988, citados pela Embrapa)."],
+    bomb: "Semente-modelo dos ensaios da equipe, escolhida para testar a estrutura da bomba. Como é introduzida, fica fora do montador de mistura para áreas degradadas.",
+    caution: "Cite sempre o nome científico, pois há outras cucurbitáceas chamadas de maxixe."
   },
   {
     id: "linguadevaca", name: "Língua-de-vaca", sci: "Rumex obtusifolius L.", family: "Polygonaceae",
@@ -59,35 +160,46 @@ const SPECIES = [
     ecology: "Erva perene de áreas perturbadas e pastos. Cada planta pode produzir dezenas de milhares de sementes, que ficam dormentes no solo por anos. Por isso é tratada como planta invasora.",
     culture: "Folhas jovens de azedas do gênero Rumex são comidas como hortaliça em várias culturas, e a planta aparece em usos populares de remédio caseiro. Pergunte à comunidade como ela é usada aqui.",
     seed: ["Produz sementes pequenas em quantidade enorme.", "A dormência no solo é longa: outro motivo para não espalhar."],
-    bomb: "Fica fora da bomba. É introduzida e invasora, e espalhar as sementes em área degradada pode piorar o problema. No guia, ela mostra por que a origem da espécie importa.",
+    bomb: "Semente-modelo dos ensaios da equipe, com sementes pequenas. Por ser introduzida e invasora, fica fora do montador: espalhar as sementes em área degradada pode piorar o problema.",
     caution: "As folhas têm oxalato: com problema nos rins, evite. Cite sempre o nome científico, porque \"língua-de-vaca\" também é nome popular de outras plantas, como a Chaptalia nutans."
-  },
-  {
-    id: "urucum", name: "Urucum", sci: "Bixa orellana L.", family: "Bixaceae",
-    origin: "nativa",
-    originNote: "Nativa da América tropical. É cultivada e usada por povos indígenas do Brasil.",
-    tags: ["Uso tradicional"], roles: ["cobertura", "fauna"], fit: 3,
-    ecology: "Arbusto de crescimento rápido que se dá bem em áreas abertas. As flores costumam receber abelhas.",
-    culture: "As sementes são cobertas por uma tinta vermelha, usada por povos indígenas na pintura do corpo e no preparo de alimentos. O colorau da cozinha brasileira é feito com ela.",
-    seed: ["Sementes pequenas e numerosas, fáceis de tirar das cápsulas secas.", "Teste a germinação do lote antes de contar as sementes por bomba."],
-    bomb: "Boa candidata: sementes pequenas, fáceis de padronizar.",
-    caution: "A tinta mancha mãos e roupas. Use luvas."
   },
   {
     id: "jenipapo", name: "Jenipapo", sci: "Genipa americana L.", family: "Rubiaceae",
     origin: "nativa",
-    originNote: "Nativa do Brasil, com ocorrência em várias regiões. Confirme os registros na Bahia na Flora e Funga do Brasil.",
-    tags: ["Frutífera nativa", "Uso tradicional"], roles: ["fauna", "alimento"], fit: 2,
-    ecology: "Árvore de beira de rio e de matas úmidas. Os frutos carnosos são comidos por animais, que levam as sementes para longe.",
-    culture: "O fruto vira licor e doce. O suco do fruto verde tinge de azul-escuro a preto e é usado por povos indígenas na pintura do corpo.",
-    seed: ["Muitas sementes por fruto, que precisam ser lavadas para tirar a polpa.", "Alguns trabalhos relatam perda de viabilidade no armazenamento: faça teste de germinação antes."],
-    bomb: "Exige cuidado: use sementes recém-lavadas e confirme a germinação do lote. Vale pela importância cultural ligada ao saber indígena.",
+    originNote: "Nativa do Brasil. A Embrapa registra ocorrência natural em vários estados, entre eles a Bahia, em mata ciliar e áreas úmidas.",
+    tags: ["Frutífera nativa", "Uso tradicional"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca"],
+    ecology: "Árvore de mata ciliar e de áreas úmidas. Tolera alagamento temporário, o que a torna útil na recuperação de áreas degradadas.",
+    culture: "O fruto vira refresco, compota, licor e vinho. Povos indígenas usam o corante do fruto na pintura do corpo e em tatuagens.",
+    seed: ["Sementes recalcitrantes: não suportam secagem e perdem a germinação no armazenamento.", "Sem dormência. Segundo a Embrapa, 48 horas na água aceleram a germinação, que varia de 30% a 95%."],
+    bomb: "Só com semente recém-lavada e bomba semeada logo. Serve para áreas úmidas.",
     caution: "O suco do fruto verde mancha a pele por dias."
+  },
+  {
+    id: "caja", name: "Cajá", sci: "Spondias mombin L.", family: "Anacardiaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil. A Embrapa registra ocorrência natural na Bahia, inclusive no sul e no oeste do estado, na Mata Atlântica.",
+    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca", "grande"],
+    ecology: "Árvore de sol e de terreno úmido, comum em mata secundária. As flores são visitadas por abelhas, e a espécie é usada na recuperação de áreas degradadas e de beira de rio.",
+    culture: "O cajá, também chamado de cajá-da-mata ou taperebá, vira suco, sorvete, doce, geleia e vinho.",
+    seed: ["O caroço tem endocarpo duro e fibroso, e a semente é recalcitrante: a viabilidade é menor que 3 meses.", "A emergência leva de 25 a 240 dias e fica perto de 50%, segundo a Embrapa."],
+    bomb: "Caroço grande e semente que não se guarda: plante direto ou use bomba maior, logo depois da colheita.",
+    caution: ""
+  },
+  {
+    id: "pitomba", name: "Pitomba", sci: "Talisia esculenta (A.St.-Hil.) Radlk.", family: "Sapindaceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, possivelmente originária da Amazônia ocidental. Um artigo de revisão cita ocorrência na Bahia.",
+    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2, flags: ["grande"],
+    ecology: "Árvore de matas e capoeiras, indicada para plantio em áreas degradadas.",
+    culture: "O fruto, de polpa agridoce, é vendido principalmente no Norte e no Nordeste. Chás de folha e de semente têm uso popular, mas não foram comprovados no artigo consultado.",
+    seed: ["Semente grande e oblonga, coberta por uma polpa mucilaginosa.", "Num estudo de 2009, fermentar para tirar a polpa levou a germinação até 93% (em cerca de 76 horas). A germinação média levou de 15 a 27 dias."],
+    bomb: "Semente grande: faça a bomba maior ou plante direto. Tire a polpa antes.",
+    caution: ""
   },
   {
     id: "caju", name: "Cajueiro", sci: "Anacardium occidentale L.", family: "Anacardiaceae",
     origin: "nativa",
-    originNote: "Nativa do Brasil, comum no litoral do Nordeste, inclusive em restingas.",
+    originNote: "Nativa do Brasil, comum no litoral do Nordeste. Uma publicação consultada lista a origem como nativa, com a Bahia entre os estados do Nordeste. Confirme na Flora e Funga do Brasil.",
     tags: ["Frutífera nativa", "Restinga e Mata"], roles: ["fauna", "alimento"], fit: 2, flags: ["grande"],
     ecology: "Árvore de restinga e dunas, que aguenta solo arenoso e pobre. O pedúnculo (o \"caju\") é comido por vários animais.",
     culture: "O pedúnculo é consumido in natura, em suco e em doce, e a castanha é muito apreciada. O nome vem do tupi.",
@@ -96,47 +208,14 @@ const SPECIES = [
     caution: "A casca da castanha tem óleo cáustico que queima a pele. Use luvas e não quebre a casca com a mão."
   },
   {
-    id: "caja", name: "Cajá", sci: "Spondias mombin L.", family: "Anacardiaceae",
-    origin: "nativa",
-    originNote: "Nativa do Brasil. Confirme a ocorrência na Bahia na Flora e Funga do Brasil.",
-    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 2, flags: ["grande"],
-    ecology: "Árvore grande, que costuma perder folhas na seca. Os frutos amarelos alimentam muitos animais.",
-    culture: "O cajá, também chamado de taperebá, é muito usado em suco, sorvete e polpa no Nordeste.",
-    seed: ["A semente fica dentro de um caroço duro e fibroso.", "A germinação costuma ser lenta e irregular: confirme tratamentos na literatura."],
-    bomb: "Caroço grande: faça a bomba maior ou plante direto.",
-    caution: ""
-  },
-  {
-    id: "sabia", name: "Sabiá", sci: "Mimosa caesalpiniifolia Benth.", family: "Fabaceae",
-    origin: "nativa",
-    originNote: "Nativa do Nordeste do Brasil, típica da Caatinga. Confirme se ocorre em Camaçari antes de usar na área.",
-    tags: ["Pioneira"], roles: ["cobertura", "solo", "fauna"], fit: 3, flags: ["dormencia"],
-    ecology: "Leguminosa de crescimento rápido, que fixa nitrogênio e cresce em solo pobre. É usada para recuperar áreas degradadas. As flores atraem abelhas.",
-    culture: "A madeira serve para estacas e lenha, e as folhas são forragem na seca do sertão.",
-    seed: ["Tegumento duro: trabalhos com a espécie recomendam quebrar a dormência, com água quente ou escarificação."],
-    bomb: "Boa candidata, depois de quebrar a dormência. Faça isso antes de moldar a bomba.",
-    caution: "Os ramos têm espinhos. Use luvas."
-  },
-  {
     id: "maracujacaatinga", name: "Maracujá-da-caatinga", sci: "Passiflora cincinnata Mast.", family: "Passifloraceae",
     origin: "nativa",
-    originNote: "Nativa do Brasil, típica da Caatinga e do semiárido. Não é espécie de restinga.",
+    originNote: "Nativa do Brasil e da Caatinga. Segundo a Embrapa, ocorre em todos os estados do Nordeste, inclusive a Bahia. Não é espécie de restinga nem de Mata Atlântica.",
     tags: ["Frutífera nativa", "PANC"], roles: ["fauna", "alimento"], fit: 2,
     ecology: "Trepadeira de áreas abertas. As flores grandes costumam ser visitadas por abelhas grandes, como as mamangavas.",
-    culture: "O fruto é comido in natura e em suco, e é colhido por comunidades do semiárido.",
+    culture: "O fruto é apreciado pelas populações do semiárido e é colhido principalmente na natureza, em extrativismo.",
     seed: ["Muitas sementes por fruto, cobertas por uma polpa que precisa ser lavada.", "Sementes de maracujá costumam ter germinação lenta e irregular."],
-    bomb: "Sementes pequenas, de bom encaixe. Reserve mais tempo de observação no ensaio.",
-    caution: ""
-  },
-  {
-    id: "pitomba", name: "Pitomba", sci: "Talisia esculenta (A.St.-Hil.) Radlk.", family: "Sapindaceae",
-    origin: "nativa",
-    originNote: "Nativa do Brasil, comum em quintais do Nordeste. Confirme a ocorrência na Bahia na Flora e Funga do Brasil.",
-    tags: ["Frutífera nativa"], roles: ["fauna", "alimento"], fit: 1, flags: ["fresca", "grande"],
-    ecology: "Árvore de porte médio. O fruto é comido por aves e mamíferos.",
-    culture: "O fruto, de polpa gelatinosa e agridoce, é comum em quintais e feiras do Nordeste.",
-    seed: ["Semente grande. Estudos indicam que as sementes do gênero perdem a viabilidade rápido.", "Semeie logo depois de tirar a polpa."],
-    bomb: "Só com semente fresca, e em bomba grande ou plantio direto.",
+    bomb: "Sementes pequenas, de bom encaixe. Reserve mais tempo de observação no experimento.",
     caution: ""
   }
 ];
@@ -160,107 +239,156 @@ const TAGS = ["Todas", "Nativa", "Introduzida", "Pioneira", "Restinga e Mata", "
    Use só fotos suas ou com licença livre (ex.: Wikimedia Commons, CC BY / CC BY-SA)
    e SEMPRE escreva o crédito: autor, licença e link da página da foto.
    Exemplo:
-     caupi: { src: "img/caupi.jpg", alt: "Vagens e flor do feijão-caupi",
-              credit: "Foto: Fulano, CC BY-SA 4.0, via Wikimedia Commons" },
-   Ids: caupi, maxixe, linguadevaca, urucum, jenipapo, caju, caja, sabia,
-        maracujacaatinga, pitomba
+     aroeira: { src: "img/aroeira.jpg", alt: "Frutos da aroeira-vermelha",
+                credit: "Foto: Fulano, CC BY-SA 4.0, via Wikimedia Commons" },
+   Ids: aroeira, mangaba, murici, cambui, pitanga, araca, mulungu, inga, oranobis,
+        garu, maxixe, linguadevaca, jenipapo, caja, pitomba, caju, maracujacaatinga
 ------------------------------------------- */
-
 const PHOTOS = {
-  caupi: {
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
-    alt: "Vagens do feijão-caupi",
-    credit: "Foto: Nome do autor, CC BY-SA 4.0, via Wikimedia Commons"
-  },
+  /* ---- Espécies atuais do guia (preencha o src e o credit de cada uma) ---- */
+  aroeira:          { src: "", alt: "Frutos da aroeira-vermelha",        credit: "" },
+  mangaba:          { src: "", alt: "Frutos da mangaba",                 credit: "" },
+  murici:           { src: "", alt: "Frutos do murici",                  credit: "" },
+  cambui:           { src: "", alt: "Frutos do cambuí",                  credit: "" },
+  pitanga:          { src: "", alt: "Frutos da pitanga",                 credit: "" },
+  araca:            { src: "", alt: "Frutos do araçá",                   credit: "" },
+  mulungu:          { src: "", alt: "Flores do mulungu",                 credit: "" },
+  inga:             { src: "", alt: "Vagens do ingá-feijão",             credit: "" },
+  oranobis:         { src: "", alt: "Folhas da ora-pro-nóbis",           credit: "" },
+  garu:             { src: "", alt: "Fruto do garu",                     credit: "" },
+  jenipapo:         { src: "", alt: "Fruto do jenipapo",                 credit: "" },
+  caja:             { src: "", alt: "Frutos do cajá",                    credit: "" },
+  pitomba:          { src: "", alt: "Frutos da pitomba",                 credit: "" },
+  caju:             { src: "", alt: "Cajueiro com caju e castanha",      credit: "" },
+  maracujacaatinga: { src: "", alt: "Fruto do maracujá-da-caatinga",     credit: "" },
   maxixe: {
     src: "https://www.sitiodamata.com.br/media/catalog/product/cache/bd7e41e8357e6ae06c7d33758afd4978/s/e/sementes-maxixe-cucumis-anguria_2nd.jpg",
     alt: "Frutos de maxixe",
-    credit: "Foto: equipe do projeto"
+    credit: ""
   },
-  linguadevaca: {
+  linguadevaca: {   // foto que você escolheu antes
     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKqPpPBk2PMG9rLMwjHt4xPHn-IRBZn8eJ5riWutEMW6c_eExYC3WZffJ&s=10",
-    alt: "Frutos da lingua-de-vaca",
-    credit: "Foto: equipe do projeto"
+    alt: "Língua-de-vaca",
+    credit: ""
+  },
+
+  /* ---- Fotos de espécies que saíram do guia: não aparecem no site,
+          mas os links ficam guardados aqui. ---- */
+  caupi: {
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdev8CQWx7L0MLVdPe4KAYwJQEY2gG3fhEM_ZmcaK2scGBJtFdk1G3BbsYggfr3RaEDO9navY6yhrhTCwGBOsMA97bGKdEhHlZwS6Ngxk&s=10",
+    alt: "Vagens do feijão-caupi",
+    credit: ""
   },
   urucum: {
     src: "https://www.oficinadopaisagista.com.br/wp-content/uploads/2022/09/Urucum-Bixa-orellana33-768x1024.jpeg",
     alt: "Cápsulas de urucum",
-    credit: "Foto: equipe do projeto"
+    credit: ""
   }
 };
-
-
 
 const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
 
 
-/* ---------- 3. FORMULAÇÕES ----------
-   parts: proporção em volume (mesmo copo medidor).
-   Água entra até a massa ficar moldável.
-   São propostas de partida: os testes dizem qual funciona melhor.
-   tests: quais ensaios se aplicam à formulação.
+/* ---------- 2b. O BIOMA ----------
+   Caracterização do ambiente. Cada dado tem a fonte ao lado (seção 8).
+   Edite os textos aqui; o site monta a seção sozinho. */
+const BIOMA = {
+  titulo: "Mata Atlântica e restinga no litoral norte de Salvador",
+  resumo: "Camaçari fica no litoral da Bahia, na Região Metropolitana de Salvador, dentro do bioma Mata Atlântica. Na faixa costeira desse bioma ocorrem as restingas, formações que crescem sobre areia e são conhecidas pela fragilidade.",
+  fatos: [
+    { rotulo: "Localização", valor: "12°41′ S, 38°19′ O", nota: "Região Metropolitana de Salvador, altitude de 36 m" },
+    { rotulo: "Área do município", valor: "784,7 km²", nota: "Segundo a Wikipedia" },
+    { rotulo: "Temperatura média anual", valor: "24,8 °C", nota: "Máxima média de 29,6 °C e mínima média de 21,0 °C (INMET, 1981 a 2010)" },
+    { rotulo: "Chuva por ano", valor: "1.736,6 mm", nota: "Cerca de 152 dias com chuva (INMET, 1981 a 2010)" },
+    { rotulo: "Mês mais chuvoso", valor: "Maio", nota: "244,4 mm em média" },
+    { rotulo: "Mês mais seco", valor: "Dezembro", nota: "74,9 mm em média" },
+    { rotulo: "Umidade relativa do ar", valor: "81,1 %", nota: "Média anual (INMET, 1981 a 2010)" }
+  ],
+  ambientes: [
+    { nome: "A restinga", texto: "É uma ecorregião da Mata Atlântica que ocupa a costa atlântica do Nordeste ao Sudeste. Cresce sobre solo arenoso, ácido e pobre em nutrientes, com árvores e arbustos de porte médio adaptados à seca e à falta de nutrientes. Há enclaves de restinga ao norte e ao sul de Salvador." },
+    { nome: "Fisionomias da restinga vizinha", texto: "Num levantamento em Praia do Forte (Mata de São João, no mesmo litoral norte), foram encontradas 68 espécies. As famílias com mais espécies foram Myrtaceae, Rubiaceae e Malpighiaceae. Duas comunidades se distinguiram: a restinga em moitas e a mata de restinga. Os solos vêm da Formação Barreiras e as chuvas somam cerca de 2.000 mm por ano, com maior concentração de março a agosto." }
+  ],
+  ameacas: "A restinga é frágil e sofre com o desmatamento. A retirada da camada superficial do solo pode retardar a sucessão natural por longos períodos. A ecorregião das restingas da costa atlântica está classificada como em estado crítico, com cerca de 14% de sua área protegida. No litoral norte, a ocupação se intensificou com o turismo depois da Linha Verde (BA-099).",
+  implicacao: "Para a bomba de sementes, isso indica três cuidados: usar espécies da restinga e da Mata Atlântica, esperar o período chuvoso e proteger o solo, porque a camada superficial é difícil de recuperar. Em Camaçari, a chuva é mais forte em maio e mais fraca em dezembro. Confira a série do INMET antes de escolher a data.",
+  limite: "As fontes consultadas dão o clima e a localização de Camaçari, mas os estudos de vegetação encontrados são de Praia do Forte, no município vizinho de Mata de São João. A vegetação específica de Camaçari, como dunas, manguezais e unidades de conservação do município, deve ser conferida com o INEMA e a prefeitura."
+};
+
+
+/* ---------- 3. FORMULAÇÕES TESTADAS (metodologia da equipe) ----------
+   parts: [material, quantidade por bomba]
+   status: "selecionada" | "descartada" | "" (aparece como etiqueta)
 ------------------------------------------- */
 const FORMULATIONS = [
   {
-    id: "F0", short: "Controle", name: "Controle: semente sem revestimento",
-    parts: [], tests: ["ger"],
-    desc: "Sementes semeadas direto no mesmo substrato, sem bomba. É a base de comparação da germinação."
+    id: "F1", short: "Somente argila", name: "Bomba somente de argila",
+    parts: [["Argila", "20 g"], ["Sementes", "cerca de 4"]],
+    status: "descartada", statusNote: "Descartada no teste de pH",
+    desc: "Camada fina de argila na palma da mão, com as sementes dentro. A argila é moldada ao redor delas."
   },
   {
-    id: "F1", short: "Argila + terra", name: "Argila e terra local",
-    parts: [["Argila", 3], ["Terra local", 1]], tests: ["res", "ret", "ger"],
-    desc: "A formulação mais simples. Mostra o que a argila sozinha já entrega."
+    id: "F2", short: "Argila com terra no interior", name: "Bomba de argila com terra no interior",
+    parts: [["Argila", "30 g"], ["Terra no interior", "10 g"], ["Sementes", "dentro da terra"]],
+    status: "selecionada", statusNote: "Formulação selecionada",
+    desc: "A argila envolve a terra e as sementes, e é boleada até formar a bomba."
   },
   {
-    id: "F2", short: "+ Húmus", name: "Argila e húmus",
-    parts: [["Argila", 3], ["Húmus ou composto", 1]], tests: ["res", "ret", "ger"],
-    desc: "Troca a terra por húmus para dar nutrientes e microrganismos à plântula."
-  },
-  {
-    id: "F3", short: "+ Biochar", name: "Argila, húmus e biochar",
-    parts: [["Argila", 3], ["Húmus ou composto", 1], ["Biochar moído", 0.5]], tests: ["res", "ret", "ger"],
-    desc: "O carvão vegetal moído tem poros que guardam água e nutrientes. Inspirado na terra preta de índio, da Amazônia."
-  },
-  {
-    id: "F4", short: "+ Mucilagem", name: "F3 com mucilagem vegetal",
-    parts: [["Argila", 3], ["Húmus ou composto", 1], ["Biochar moído", 0.5]], liquid: "Mucilagem de ora-pro-nóbis no lugar da água pura", tests: ["res", "ret", "ger"],
-    desc: "A mucilagem, um gel natural das folhas de ora-pro-nóbis, pode colar a mistura e segurar água. A concentração também é uma variável a testar."
-  },
-  {
-    id: "F5", short: "+ Inóculo", name: "F4 com inóculo microbiano",
-    parts: [["Argila", 3], ["Húmus ou composto", 1], ["Biochar moído", 0.5]], liquid: "Mucilagem de ora-pro-nóbis", extra: "Inóculo microbiano: defina com o professor",
-    tests: ["res", "ret", "ger"],
-    desc: "Acrescenta a parte microbiológica. Exemplos: rizóbios para leguminosas que formam nódulos, como o caupi e o sabiá, ou o fungo Trichoderma, que protege contra fungos de solo. Use apenas produtos registrados e com orientação."
+    id: "F3", short: "Terra misturada à argila", name: "Bomba com terra misturada à argila",
+    parts: [["Terra", "140 g para 6 bombas (≈ 23,33 g cada)"], ["Argila", "70 g para 6 bombas (≈ 11,67 g cada)"], ["Sementes", "na superfície"]],
+    status: "", statusNote: "",
+    desc: "Terra e argila são misturadas até a massa ficar homogênea, divididas em 6 porções iguais e boleadas. Quando necessário, usa-se um pouco de água nas mãos."
   }
 ];
 
+/* ---------- 3b. METODOLOGIA E RESULTADOS DA EQUIPE ----------
+   Texto resumido da metodologia. Os números abaixo são os medidos pela equipe. */
+const METODO = {
+  intro: "A pesquisa combinou fundamentação teórica e uma etapa prática. A fundamentação reuniu revisão bibliográfica narrativa e levantamento de dados ambientais em sites oficiais, com descritores sobre restauração ecológica e tecnologias sociais. A etapa prática desenvolveu e avaliou bombas de sementes.",
+  sementes: "Para padronizar os ensaios e verificar a integridade estrutural das bombas, usaram-se primeiro sementes de feijão (Phaseolus vulgaris), de germinação rápida e vigorosa. Em seguida, foram substituídas por sementes de maxixe (Cucumis anguria) e de língua-de-vaca (Rumex obtusifolius).",
+  materiais: "Argila natural comum e substrato orgânico comercial. As proporções continuam sendo ajustadas conforme as características físicas e o tamanho de cada semente.",
+  secagem: "As bombas secaram à temperatura ambiente (24 a 27 °C), sobre caixa de ovos de polpa de papel.",
+  analise: "Os dados foram analisados de forma descritiva, para comparar o desempenho estrutural e germinativo das bombas e selecionar a de melhor qualidade."
+};
 
-/* ---------- 4. CAMADAS DO DIAGRAMA ---------- */
+/* Teste de pH: amostras de cerca de 4 g */
+const PH_FAIXA = "6,0 a 6,5";
+const RESULT_PH = [
+  { amostra: "Terra, amostra 1", ph: 6.47 },
+  { amostra: "Terra, amostra 2", ph: 6.64 },
+  { amostra: "Argila isolada", ph: 5.72 },
+  { amostra: "Mistura de terra e argila", ph: 6.54 }
+];
+const PH_TEXTO = "A terra ficou próxima da faixa levemente ácida recomendada para a germinação (6,0 a 6,5). A argila isolada foi mais ácida (5,72), o que poderia limitar o desenvolvimento inicial das plantas. Por isso a formulação somente de argila (F1) foi descartada, e a mistura com terra garantiu um pH equilibrado.";
+
+/* Teste de resistência hídrica: imersão em 200 mL de água por 5 minutos.
+   O site calcula sozinho a variação (depois − antes). */
+const RESULT_AGUA = [
+  { formulacao: "F1", antes: 22.30, depois: 19.90 },
+  { formulacao: "F2", antes: 36.55, depois: 28.48 },
+  { formulacao: "F3", antes: 22.20, depois: 24.80 }
+];
+const AGUA_TEXTO = "As formulações compostas (F2 e F3) mostraram boa capacidade de retenção de água. Observou-se a dissolução parcial das bombas, o que é positivo: facilita a abertura gradual da estrutura e a liberação das sementes no solo.";
+
+/* Germinação: bombas em recipientes com 150 g de terra, irrigadas com borrifador uma vez ao dia, por 1 semana */
+const GERM_TEXTO = "As duas formulações que seguiram para o ensaio (F2 e F3) apresentaram germinação satisfatória em uma semana, com destaque para a bomba de argila com terra no interior (F2).";
+const FORMULACAO_SELECIONADA = "F2";
+
+
+/* ---------- 4. CAMADAS DO DIAGRAMA (formulação selecionada, F2) ---------- */
 const LAYERS = {
   argila: {
     title: "Casca de argila",
-    text: "Protege a semente de formigas, aves e chuva forte, e do sol enquanto ela espera a chuva. A argila também segura umidade ao redor da semente.",
-    test: "Testado em: resistência mecânica e retenção hídrica."
+    text: "30 g de argila natural comum. Protege a semente de formigas, aves e chuva forte, e segura umidade ao redor dela. Na imersão, parte da casca se dissolve, o que ajuda a liberar as sementes.",
+    test: "Entra em: F1, F2 e F3. O pH da argila isolada foi 5,72."
   },
   humus: {
-    title: "Húmus e composto",
-    text: "Dão nutrientes e microrganismos para a plântula nos primeiros dias de vida.",
-    test: "Testado em: germinação."
-  },
-  biochar: {
-    title: "Biochar (carvão vegetal moído)",
-    text: "Tem poros que guardam água e nutrientes. A inspiração é a terra preta de índio, solo rico em carvão documentado na Amazônia. A ligação com o litoral baiano é uma inspiração, não uma equivalência.",
-    test: "Testado em: retenção hídrica."
-  },
-  mucilagem: {
-    title: "Mucilagem vegetal",
-    text: "Gel natural, como o das folhas de ora-pro-nóbis, que pode colar a mistura e segurar mais água. É uma hipótese para testar na formulação F4, não um resultado.",
-    test: "Testado em: resistência mecânica e retenção hídrica."
+    title: "Terra no interior",
+    text: "10 g de terra, com pH de 6,47 e 6,64 nas duas amostras, perto da faixa recomendada para a germinação. A terra no interior corrige a acidez da argila e dá substrato às sementes.",
+    test: "Entra em: F2 (no interior) e F3 (misturada à argila)."
   },
   semente: {
-    title: "Semente e inóculo microbiano",
-    text: "Semente de espécie nativa de matriz local, pré-tratada se precisar. O inóculo é a parte microbiológica do produto: bactérias fixadoras de nitrogênio para leguminosas, ou fungos protetores.",
-    test: "Testado em: germinação (F5 compara com e sem inóculo)."
+    title: "Sementes",
+    text: "Cerca de 4 sementes por bomba, colocadas dentro da terra. Nos ensaios foram usadas sementes de feijão (padronização), maxixe e língua-de-vaca.",
+    test: "Entra em: todas as formulações."
   }
 };
 
@@ -270,27 +398,33 @@ const BOMB_STEPS = [
   { title: "Colher com critério", text: "Colha frutos maduros de várias árvores locais da mesma espécie, de preferência saudáveis e próximas da área a restaurar. Isso mantém a diversidade genética e a adaptação ao lugar. Anote data, local e árvore-matriz." },
   { title: "Limpar e escolher", text: "Retire a polpa, lave e descarte sementes furadas, chochas ou mofadas. Em algumas espécies, as que boiam em água costumam estar vazias. Confira isso espécie por espécie." },
   { title: "Quebrar a dormência quando precisar", text: "Algumas espécies têm semente de casca dura. A Embrapa descreve a imersão em água quente (80 a 100 °C, deixando esfriar por até 24 horas), a escarificação mecânica com lixa e a escarificação ácida. O ácido não é para uso escolar; peça orientação ao professor para a água quente." },
-  { title: "Preparar a argila", text: "Peneire para tirar pedras e raízes e deixe de molho até virar uma massa lisa. Misture os componentes da formulação em partes de volume, sempre com o mesmo copo medidor." },
-  { title: "Moldar esferas padronizadas", text: "Envolva as sementes na massa e modele esferas do mesmo tamanho (por exemplo, 3 cm de diâmetro). Padronizar o tamanho é o que permite comparar as formulações." },
-  { title: "Secar à sombra", text: "Deixe secar em local arejado, protegido do sol direto, virando as bombas. Sol forte racha a casca. Registre quantas horas levou: o tempo de secagem entra nos seus dados." },
+  { title: "Separar e pesar os materiais", text: "Use argila natural comum e terra ou substrato orgânico. Na formulação selecionada (F2), pese 30 g de argila e 10 g de terra por bomba. Tire pedras e raízes da argila." },
+  { title: "Moldar a bomba", text: "Faça uma camada fina de argila na palma da mão, acrescente a terra e coloque cerca de 4 sementes dentro. Bole a argila até envolver a terra e as sementes. Use esferas do mesmo tamanho para poder comparar os lotes." },
+  { title: "Secar", text: "Deixe secar à temperatura ambiente (24 a 27 °C), em local arejado, sobre uma caixa de ovos de polpa de papel. Evite sol direto, que racha a casca. Registre quanto tempo levou." },
   { title: "Etiquetar e guardar", text: "Etiquete cada lote com formulação, espécies e data. Guarde em local seco e fresco. Sementes recalcitrantes não podem ser guardadas: use no mesmo dia." },
-  { title: "Registrar", text: "Fotografe o lote e pese uma amostra. Esses números entram no laboratório." }
+  { title: "Registrar", text: "Fotografe o lote e pese uma amostra. Esses dados permitem comparar os lotes e acompanhar o desempenho." }
 ];
 
 
-/* ---------- 6. ESPÉCIES SELECIONADAS, RESULTADOS E REGISTROS ----------
-   SELECTED: espécies escolhidas para o ensaio (aparecem marcadas no guia).
-             Sugestão inicial: ajuste conforme a escolha da equipe.
-   RESULTS:  medidas dos ensaios, publicadas para todos os visitantes.
-             Comece vazio. Quando houver dados, digite-os na "Área da equipe"
-             da página Resultados, clique em "Copiar dados para publicar" e
-             cole aqui no lugar de [].
+/* ---------- 6. ESPÉCIES SELECIONADAS E CONTAGEM DE GERMINAÇÃO ----------
+   SELECTED:   espécies usadas nos ensaios da equipe (aparecem marcadas no guia).
+   GERMINACAO: OPCIONAL. Se a equipe tiver a contagem de sementes, acrescente
+               uma linha por formulação e espécie:
+                 { formulacao: "F2", especie: "maxixe", semeadas: 20, germinadas: 12 },
+               formulacao: F1, F2 ou F3
+               especie:    id da espécie (por exemplo maxixe, linguadevaca)
+               semeadas:   quantas sementes foram semeadas
+               germinadas: quantas germinaram (nunca mais que as semeadas)
+               O site calcula sozinho a porcentagem (germinadas ÷ semeadas × 100).
+               Sem linhas aqui, o site mostra só o resultado descritivo (GERM_TEXTO).
    TESTIMONIES: registros feitos com as comunidades, SOMENTE com autorização.
-             Formato: { name: "", community: "", practice: "", text: "" }
+               Formato: { name: "", community: "", practice: "", text: "" }
 ------------------------------------------- */
-const SELECTED = ["caupi", "maxixe", "urucum", "sabia"];
+const SELECTED = ["maxixe", "linguadevaca"];
 
-const RESULTS = [];
+const GERMINACAO = [
+  // { formulacao: "F2", especie: "maxixe", semeadas: 20, germinadas: 12 },
+];
 
 const TESTIMONIES = [];
 
@@ -309,13 +443,29 @@ const TEAM = {
    consult: referências para você consultar e citar no artigo. */
 const SOURCES = {
   read: [
+    { t: "Camaçari (Wikipedia, dados do INMET 1981 a 2010)", u: "https://en.wikipedia.org/wiki/Cama%C3%A7ari", n: "Coordenadas, área, altitude, temperatura, chuva e umidade do município." },
+    { t: "Restingas da Costa Atlântica (Wikipedia)", u: "https://en.wikipedia.org/wiki/Atlantic_Coast_restingas", n: "Restinga como ecorregião da Mata Atlântica, solo arenoso e ácido, enclaves ao norte e ao sul de Salvador, estado crítico e 14% protegido." },
     { t: "Lélia, a amefricana (Jornal da USP)", u: "https://jornal.usp.br/?p=785360", n: "Conceito de Amefricanidade, cunhado em 1980." },
     { t: "Junho Ambiental: avanço das cidades ameaça a conservação da Mata Atlântica (MPF, 26/06/2026)", u: "https://www.mpf.mp.br/o-mpf/unidades/procuradoria-geral-da-republica-pgr/noticias/junho-ambiental-avanco-das-cidades-ameaca-a-conservacao-da-mata-atlantica", n: "Restam 24% da vegetação nativa; a expansão urbana desordenada fragmentou o bioma." },
     { t: "Bombas de sementes de castanha-do-Brasil (repositório do IFAP)", u: "https://repositorio.ifap.edu.br/bitstreams/5c5cd744-9d8d-42d4-b835-e3feb48ef839/download", n: "Desenho experimental com 3 tratamentos e 16 repetições. Germinação de 75%, 50% e 44%, sem diferença significativa (p = 0,177)." },
     { t: "Superação de dormência de sementes florestais (Embrapa, capítulo 5)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/299616/1/cap5SuperacaoDormencia0001.pdf", n: "Métodos de escarificação, água quente e imersão." },
     { t: "Restinga em Praia do Forte, Litoral Norte da Bahia (Revista Biotemas, 2012)", u: "https://periodicos.ufsc.br/index.php/biotemas/article/download/2175-7925.2012v25n1p31/20873/74801", n: "Espécies dominantes da restinga, incluindo Byrsonima blanchetiana. Famílias mais ricas: Myrtaceae, Rubiaceae e Malpighiaceae." },
-    { t: "Feijão-caupi no Brasil (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/974091/1/FRIJOLCAUPIBRASIL.pdf", n: "Origem africana, chegada ao Brasil pela Bahia no século XVI, fixação de nitrogênio e tolerância à seca." },
-    { t: "Maxixe, Horticultura Brasileira (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/133010/1/HorticulturaBrasileirav.16n.2p.1671711998.pdf", n: "Origem na África tropical, uso culinário e hábito da planta." },
+    { t: "Jenipapeiro, Espécies Arbóreas Brasileiras (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140091/1/Especies-Arboreas-Brasileiras-vol-1-Jenipapeiro.pdf", n: "Ocorrência natural (inclui a Bahia), sementes recalcitrantes, germinação de 30% a 95% e uso indígena do corante." },
+    { t: "Cajá-da-mata, Espécies Arbóreas Brasileiras (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140734/1/Especies-Arboreas-Brasileiras-vol-2-Caja-da-Mata.pdf", n: "Spondias mombin nativa, com ocorrência na Bahia. Semente recalcitrante e emergência de 25 a 240 dias." },
+    { t: "Aroeira-vermelha (Embrapa)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/862171/1/Aroeira.Vermelha.pdf", n: "Nativa do Rio Grande do Norte ao Rio Grande do Sul. Uso em recuperação de áreas degradadas e relatos de dermatite." },
+    { t: "Mangaba (Embrapa)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1104669/1/Mangaba.pdf", n: "Ocorrência natural na Bahia, em restinga, tabuleiro e dunas. Semente recalcitrante: semear em até 4 dias." },
+    { t: "Sabiá, Espécies Arbóreas Brasileiras (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140790/1/Especies-Arboreas-Brasileiras-vol-2-Sabia.pdf", n: "Nativo do Nordeste, mas na Bahia só é conhecido como cultivado. Por isso saiu da lista de nativas." },
+    { t: "Florística em fitofisionomias de restinga na Bahia (estudo em Jaguaripe)", u: "https://revistas.ufg.br/RBN/article/download/53845/26493", n: "Lista de plantas de restinga da Bahia, com aroeira e murici, e plantas exóticas e invasoras como a casuarina." },
+    { t: "Pitomba, Talisia esculenta (Redalyc)", u: "https://www.redalyc.org/pdf/4457/445744094003.pdf", n: "Nativa do Brasil, com registro na Bahia. Fermentação para tirar a polpa elevou a germinação a 93%." },
+    { t: "Maracujá-da-caatinga (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1073293/1/Artigo27.pdf", n: "Passiflora cincinnata, nativa da Caatinga, com ocorrência em todos os estados do Nordeste." },
+    { t: "Ora-pro-nóbis, Plantas para o Futuro (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1073444/1/regio-centro-oeste-26-07-20171-281-290.pdf", n: "Pereskia aculeata nativa, com ocorrência na Bahia e em restingas. Propagação por estacas, proteína e mucilagem." },
+    { t: "Araçá, Plantas para o Futuro (Embrapa)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1073409/1/Araca.pdf", n: "Psidium guineense: restingas e tabuleiros, Bahia na distribuição, germinação em 10 a 15 dias." },
+    { t: "Pitangueira, Espécies Arbóreas Brasileiras (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1140887/1/Especies-Arboreas-Brasileiras-vol-2-Pitangueira.pdf", n: "Nativa, com Bahia entre as UFs. Sementes recalcitrantes, germinação de até 87%." },
+    { t: "Mulungu, Espécies Arbóreas Brasileiras (Embrapa)", u: "https://www.alice.cnptia.embrapa.br/alice/bitstream/doc/1136647/1/Especies-Arboreas-Brasileiras-vol-3-Mulungu.pdf", n: "Nativo, com ocorrência na Bahia. Dormência do tegumento, fixação de nitrogênio e sementes venenosas." },
+    { t: "Leguminosas florestais da Mata Atlântica (Embrapa, COT 144)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1090428/1/COT144LeguminosasflorestaisdaMataAtlantica.pdf", n: "Espécies de ingá com ocorrência na Bahia e registro de nodulação." },
+    { t: "Cambuí, Plantas para o Futuro (Embrapa)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1104673/1/Cambui.pdf", n: "Myrciaria floribunda: ocorrência na Bahia, em restinga. Germinação, tegumento e uso do fruto." },
+    { t: "PANC da restinga: ocorrência e uso em Maraú, Bahia (ESCAS)", u: "https://www.escas.org.br/wp-content/uploads/2023/09/PLANTAS-ALIMENTICIAS-NAO-CONVENCIONAIS-DA-RESTINGA-Ocorrencia-e-uso-no-Municipio-de-Marau-Bahia-Brasil.pdf", n: "10 PANCs de restinga citadas por moradores, entre elas aroeira, ora-pro-nóbis e o cacto garu." },
+    { t: "PANC da restinga: estudo em Jandaíra, Bahia (Even3)", u: "https://www.even3.com.br/anais/vsfdrfceudpdr2021/337182-plantas-alimenticias-nao-convencionais-da-restinga--um-estudo-no-municipio-de-jandaira-na-bahia/", n: "Cinco PANCs do Litoral Norte da Bahia, entre elas ora-pro-nóbis e garu." },
     { t: "Língua-de-vaca (Agrolink)", u: "https://www.agrolink.com.br/problema/lingua-de-vaca_348.html", n: "Rumex obtusifolius como planta invasora, com até 60 mil sementes por planta e dormência de anos." },
     { t: "Mata Atlântica na APA do Pratigi, Bahia (repositório da UFRB)", u: "https://ri.ufrb.edu.br/handle/123456789/2717", n: "342 espécies arbóreas em 162 hectares; Myrtaceae é a família mais rica." }
   ],
@@ -324,7 +474,6 @@ const SOURCES = {
     { t: "speciesLink", u: "https://specieslink.net", n: "Registros de coleta por município: use para checar Camaçari." },
     { t: "Kinupp e Lorenzi (2014). Plantas Alimentícias Não Convencionais (PANC) no Brasil", u: "", n: "Guia de identificação e usos das PANCs." },
     { t: "Lei nº 13.123/2015 (Lei da Biodiversidade)", u: "", n: "Regras para acesso ao conhecimento tradicional associado. Converse com o professor antes de registrar saberes." },
-    { t: "Iphan: Ofício das Baianas de Acarajé", u: "http://portal.iphan.gov.br", n: "Registro como patrimônio imaterial (2005). Confira o dossiê para citar." },
     { t: "INMET", u: "https://portal.inmet.gov.br", n: "Séries de chuva para definir a época de dispersão." }
   ]
 };
