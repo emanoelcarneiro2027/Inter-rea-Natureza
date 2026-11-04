@@ -67,7 +67,7 @@
           </article>
           <article class="block">
             <h3>Resultados dos experimentos</h3>
-            <p>Germinação das sementes em cada formulação de bomba, com média, desvio-padrão e teste estatístico, e os ensaios de resistência e retenção de água.</p>
+            <p>Metodologia da equipe, três formulações de bomba, testes de pH e de resistência hídrica, germinação e a formulação selecionada.</p>
             <button class="link-btn" data-go="resultados">Ver os resultados</button>
           </article>
           <article class="block">
@@ -104,7 +104,20 @@
           tem parte comestível, mas não é de consumo comum. Abra uma ficha para ver também os
           cuidados com a semente e como ela se comporta na bomba.
         </p>
+        <p class="muted">
+          As espécies vêm de estudos da restinga e da Mata Atlântica do litoral baiano, como o
+          de Praia do Forte (vizinha de Camaçari), e de levantamentos de PANCs de restinga na
+          Bahia. Nenhuma fonte consultada lista só as plantas de Camaçari: a ocorrência no
+          município deve ser conferida ficha a ficha, no speciesLink.
+        </p>
+        <p class="muted">
+          O maxixe e a língua-de-vaca, marcados como selecionados, foram as sementes usadas nos
+          ensaios da equipe. As duas são introduzidas: servem para testar a bomba, e as nativas
+          são as indicadas para a dispersão em áreas degradadas.
+        </p>
       </header>
+
+      <div class="wrap" id="biomaRoot"></div>
 
       <div class="toolbar">
         <input id="speciesSearch" class="search" type="search" aria-label="Buscar espécies"
@@ -112,7 +125,7 @@
         <div id="tagFilters" class="chips" role="group" aria-label="Filtrar por grupo"></div>
         <select id="fitSelect" aria-label="Filtrar por uso na bomba">
           <option value="all">Todas as espécies</option>
-          <option value="sel">Selecionadas para o ensaio</option>
+          <option value="sel">Selecionadas para o experimento</option>
           <option value="good">Boas para a bomba</option>
           <option value="out">Fora da bomba</option>
         </select>
@@ -172,7 +185,7 @@
           <article class="know">
             <h4>Povos indígenas</h4>
             <p><strong>O que a literatura registra:</strong> manejo de roças, áreas em pousio e matas, e a terra preta de índio, solo da Amazônia enriquecido com carvão e matéria orgânica.</p>
-            <p><strong>Na bomba:</strong> o biochar da formulação F3 se inspira na terra preta. A terra preta é amazônica, então a ligação com a Bahia é inspiração, não equivalência.</p>
+            <p><strong>Na bomba:</strong> a terra no interior da bomba segue a ideia de pôr solo rico em matéria orgânica junto da semente. A terra preta é amazônica, então a ligação com a Bahia é inspiração, não equivalência.</p>
           </article>
         </div>
       </div>
@@ -185,11 +198,10 @@
               <tr><th scope="col">Prática</th><th scope="col">Princípio científico</th><th scope="col">No protótipo</th></tr>
             </thead>
             <tbody>
-              <tr><td>Terra preta de índio, com carvão e matéria orgânica</td><td>Material poroso retém água e nutrientes</td><td>Biochar na formulação F3</td></tr>
+              <tr><td>Terra preta de índio, com carvão e matéria orgânica</td><td>Solo com matéria orgânica retém água e nutrientes</td><td>Terra no interior da bomba (F2)</td></tr>
               <tr><td>Quintal com muitas espécies</td><td>Diversidade funcional: cobertura do solo, fixação de nitrogênio, alimento para a fauna</td><td>Mistura de espécies no montador</td></tr>
               <tr><td>Calendário de chuvas e marés</td><td>Fenologia e disponibilidade de água para a germinação</td><td>Data de dispersão no início do período chuvoso</td></tr>
               <tr><td>Sementes crioulas e árvores-matriz</td><td>Adaptação local e diversidade genética</td><td>Coleta em matrizes locais</td></tr>
-              <tr><td>Plantas mucilaginosas usadas em preparos populares</td><td>Hidrocoloides colam partículas e retêm água</td><td>Mucilagem de ora-pro-nóbis na formulação F4 (hipótese)</td></tr>
             </tbody>
           </table>
         </div>
@@ -236,22 +248,38 @@
       <header class="page-head wrap">
         <h2>Resultados dos experimentos</h2>
         <p>
-          Comparação de formulações de bombas de sementes quanto à germinação, com ensaios
-          complementares de resistência mecânica e retenção de água. Os números vêm das
-          medidas da equipe: nada aqui é estimado ou simulado.
+          Metodologia e resultados da equipe na comparação de três formulações de bombas de
+          sementes. Os números são as medidas registradas nos ensaios.
         </p>
       </header>
 
       <div class="wrap">
+        <h3 class="section-title">Metodologia</h3>
+        <div id="metodoRoot"></div>
+      </div>
+
+      <div class="wrap">
         <h3 class="section-title">Formulações testadas</h3>
-        <p class="muted measure">
-          Proporções em partes de volume (o mesmo copo medidor). A água entra até a massa
-          ficar moldável.
-        </p>
+        <p class="muted measure">Quantidades por unidade, em gramas, medidas em balança.</p>
         <div class="formulations" id="formulationList"></div>
       </div>
 
-      <div class="wrap" id="labRoot"></div>
+      <div class="wrap">
+        <h3 class="section-title">Teste de pH</h3>
+        <div id="phRoot"></div>
+      </div>
+
+      <div class="wrap">
+        <h3 class="section-title">Teste de resistência hídrica</h3>
+        <div id="aguaRoot"></div>
+      </div>
+
+      <div class="wrap" id="germRoot"></div>
+
+      <div class="wrap">
+        <h3 class="section-title">Formulação selecionada</h3>
+        <div id="selecionadaRoot"></div>
+      </div>
     </section>
 
     <!-- ==================== DISPERSÃO ==================== -->
@@ -283,25 +311,6 @@
         </div>
       </div>
 
-      <div class="wrap">
-        <h3 class="section-title">Calcular o material</h3>
-        <form class="calc" id="calcForm" novalidate>
-          <label>Formulação
-            <select id="calcFormulation"></select>
-          </label>
-          <label>Número de bombas
-            <input id="calcCount" type="text" inputmode="numeric" value="50">
-          </label>
-          <label>Diâmetro (cm)
-            <input id="calcDiameter" type="text" inputmode="decimal" value="3">
-          </label>
-          <label>Sementes por bomba
-            <input id="calcSeeds" type="text" inputmode="numeric" value="2">
-          </label>
-        </form>
-        <div id="calcResult" class="calc-result" aria-live="polite"></div>
-      </div>
-
       <div class="wrap three-col">
         <article class="block">
           <h3>Escolher o lugar</h3>
@@ -309,7 +318,7 @@
             <li><label><input type="checkbox" data-check="disp-1"> Conversei com o proprietário ou o órgão responsável pela área. Em unidades de conservação, áreas de preservação permanente e dunas, só com autorização do órgão ambiental.</label></li>
             <li><label><input type="checkbox" data-check="disp-2"> Usei só espécies nativas, com sementes de árvores-matriz locais.</label></li>
             <li><label><input type="checkbox" data-check="disp-3"> Escolhi a época: o início do período chuvoso. Confira a série de chuva no INMET.</label></li>
-            <li><label><input type="checkbox" data-check="disp-4"> Preenchi a ficha da área (abaixo).</label></li>
+            <li><label><input type="checkbox" data-check="disp-4"> Anotei o ponto de referência, o tipo de solo e se o local tem sol ou sombra.</label></li>
             <li><label><input type="checkbox" data-check="disp-5"> Combinei com moradores e lideranças: a comunidade ajuda a escolher o local e a monitorar.</label></li>
           </ul>
         </article>
@@ -340,41 +349,6 @@
           também é resultado: ele mostra os limites da técnica e orienta a próxima tentativa.
         </p>
       </div>
-
-      <div class="wrap">
-        <h3 class="section-title">Ficha da área</h3>
-        <p class="muted measure">Cada área visitada ou escolhida para a dispersão ganha uma ficha, salva neste navegador.</p>
-        <form class="area-form" id="areaForm">
-          <label>Local
-            <input id="areaName" type="text" maxlength="80" required placeholder="Ex.: terreno ao lado da escola">
-          </label>
-          <label>Tipo de degradação
-            <select id="areaType">
-              <option>Desmatamento</option>
-              <option>Lixo e entulho</option>
-              <option>Solo exposto ou erosão</option>
-              <option>Pasto de capim</option>
-              <option>Aterro ou loteamento</option>
-              <option>Outro</option>
-            </select>
-          </label>
-          <label>Solo
-            <select id="areaSoil">
-              <option>Arenoso</option><option>Argiloso</option><option>Misto</option><option>Não sei</option>
-            </select>
-          </label>
-          <label>Sol
-            <select id="areaSun">
-              <option>Pleno</option><option>Parcial</option><option>Sombra</option>
-            </select>
-          </label>
-          <label class="wide">Observações
-            <input id="areaNotes" type="text" maxlength="200" placeholder="Vegetação que sobrou, acesso, vizinhança">
-          </label>
-          <button class="btn primary" type="submit">Salvar ficha</button>
-        </form>
-        <div id="areaList" class="area-list"></div>
-      </div>
     </section>
 
     <!-- ==================== SOBRE ==================== -->
@@ -404,7 +378,7 @@
           <li><span>Investigar tecnologias ancestrais associadas ao manejo ambiental e à conservação da biodiversidade.</span><button class="link-btn" data-go="saberes">Saberes ancestrais</button></li>
           <li><span>Identificar espécies nativas e PANCs de relevância ecológica e cultural para o território de Camaçari.</span><button class="link-btn" data-go="especies">Espécies</button></li>
           <li><span>Desenvolver e testar protótipos de bombas de sementes enriquecidas com componentes que favoreçam a germinação.</span><button class="link-btn" data-go="dispersao">Fazer as bombas</button></li>
-          <li><span>Comparar diferentes formulações quanto à retenção hídrica, resistência mecânica e eficiência germinativa.</span><button class="link-btn" data-go="resultados">Resultados</button></li>
+          <li><span>Comparar três formulações quanto ao pH, à resistência hídrica e à germinação.</span><button class="link-btn" data-go="resultados">Resultados</button></li>
           <li><span>Relacionar os conhecimentos científicos da restauração ecológica aos saberes ambientais preservados por mulheres negras e indígenas da Bahia.</span><button class="link-btn" data-go="saberes">Do saber à tecnologia</button></li>
         </ul>
       </div>
@@ -454,7 +428,6 @@
 
   <noscript><p class="wrap">Este guia precisa de JavaScript para funcionar.</p></noscript>
 
-  <script src="GuiaEstatistica.js"></script>
   <script src="GuiaDados.js"></script>
   <script src="Guia.js"></script>
 </body>
