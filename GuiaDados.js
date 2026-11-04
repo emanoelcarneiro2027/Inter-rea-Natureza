@@ -244,6 +244,10 @@ const TAGS = ["Todas", "Nativa", "Introduzida", "Pioneira", "Restinga e Mata", "
    Ids: aroeira, mangaba, murici, cambui, pitanga, araca, mulungu, inga, oranobis,
         garu, maxixe, linguadevaca, jenipapo, caja, pitomba, caju, maracujacaatinga
 ------------------------------------------- */
+<<<<<<< HEAD
+
+ 
+=======
 const PHOTOS = {
   /* ---- Espécies atuais do guia (preencha o src e o credit de cada uma) ---- */
   aroeira:          { src: "", alt: "Frutos da aroeira-vermelha",        credit: "" },
@@ -285,6 +289,7 @@ const PHOTOS = {
     credit: ""
   }
 };
+>>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 
 const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
 
@@ -313,6 +318,97 @@ const BIOMA = {
   limite: "As fontes consultadas dão o clima e a localização de Camaçari, mas os estudos de vegetação encontrados são de Praia do Forte, no município vizinho de Mata de São João. A vegetação específica de Camaçari, como dunas, manguezais e unidades de conservação do município, deve ser conferida com o INEMA e a prefeitura."
 };
 
+<<<<<<< HEAD
+const PHOTOS = {
+  /* ---- Espécies atuais do guia (preencha o src e o credit de cada uma) ---- */
+  aroeira:          { 
+    src: "https://www.floralondrina.com.br/img/products/muda-de-aroeira-pimenteira-schinus-terebinthifolius_1_1200.jpg", 
+    alt: "Frutos da aroeira-vermelha",        
+    credit: "" },
+
+  mangaba:          {
+     src: "https://www.correiobraziliense.com.br/cbradar/wp-content/uploads/2025/12/Gemini_Generated_Image_pco1vdpco1vdpco1-2.png", 
+     alt: "Frutos da mangaba",                 
+     credit: "" },
+
+  murici:           {
+     src: "https://www.shutterstock.com/image-photo/murici-byrsonima-verbascifolia-rare-littleknown-260nw-2732446009.jpg", 
+     alt: "Frutos do murici",                  
+     credit: "" },
+
+  cambui:           {
+     src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRPhNdAVMP0X82V11wJSPp_BtsZtadiwDO2t-MPE5ZpAFUP_tWK", 
+     alt: "Frutos do cambuí",                  
+     credit: "" },
+
+  pitanga:          {
+    src: "https://cdn.awsli.com.br/2772/2772039/produto/331426805/pitanga-vermelha-37qok77v6p.jpg", 
+    alt: "Frutos da pitanga",                 
+    credit: "" },
+    
+  araca:            {
+     src: "https://www.colecionandofrutas.com.br/psidiumguineense_arquivos/image005.jpg", 
+     alt: "Frutos do araçá",                   
+     credit: "" },
+
+  mulungu:          {
+     src: "https://appverde.wordpress.com/wp-content/uploads/2015/09/dsc06212.jpg",
+     alt: "Flores do mulungu",                 
+     credit: "" },
+
+  inga:             {
+     src: "https://www.floralondrina.com.br/img/products/muda-de-inga-branco-inga-laurina_1_1200.jpg",
+     alt: "Vagens do ingá-feijão",             
+     credit: "" },
+
+  oranobis:         {
+     src: "https://www.unirio.br/ccbs/ibio/herbariohuni/imagens/copy_of_PereskiaaculeataAlexandreMachado.jpg", 
+     alt: "Folhas da ora-pro-nóbis",           
+     credit: "" },
+
+  garu:             {
+     src: "https://tudosobreplantas.com.br/wp-content/uploads/sistsp/cereus-fernambucensis_tudosobreplantas_1.jpg", 
+     alt: "Fruto do garu",                     
+     credit: "" },
+
+  jenipapo:         {
+     src: "https://cdn.awsli.com.br/2500x2500/2772/2772039/produto/371887799/jenipapo-0qgjzpjn8s.jpg", 
+     alt: "Fruto do jenipapo",                 
+     credit: "" },
+
+  caja:             {
+     src: "https://www.sitiodamata.com.br/media/catalog/product/cache/bd7e41e8357e6ae06c7d33758afd4978/s/e/sementes-caja-mirim-spondias-mombin_2nd.jpg", 
+     alt: "Frutos do cajá",                    
+     credit: "" },
+
+  pitomba:          {
+     src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_KMJzpIb8JBgUsHH06FeKHq5aXBBlF_kUXlPBG23p1sJvOTyF", 
+     alt: "Frutos da pitomba",                 
+     credit: "" },
+
+  caju:             {
+     src: "https://www.cerratinga.org.br/wp-content/uploads/2021/09/caju-frutos-dodesign-s.jpg", 
+     alt: "Cajueiro com caju e castanha",      
+     credit: "" },
+
+  maracujacaatinga: { 
+    src: "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTbpsuRuBiljJ0uoTyftsq851BF2-TmhoLJ8jrFnycxBa8B8zEl", 
+    alt: "Fruto do maracujá-da-caatinga",     
+    credit: "" },
+
+  maxixe: {
+    src: "https://www.sitiodamata.com.br/media/catalog/product/cache/bd7e41e8357e6ae06c7d33758afd4978/s/e/sementes-maxixe-cucumis-anguria_2nd.jpg",
+    alt: "Frutos de maxixe",
+    credit: ""
+  },
+  linguadevaca: {   // foto que você escolheu antes
+    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKqPpPBk2PMG9rLMwjHt4xPHn-IRBZn8eJ5riWutEMW6c_eExYC3WZffJ&s=10",
+    alt: "Língua-de-vaca",
+    credit: ""
+  },
+};
+=======
+>>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 
 /* ---------- 3. FORMULAÇÕES TESTADAS (metodologia da equipe) ----------
    parts: [material, quantidade por bomba]
@@ -373,6 +469,34 @@ const GERM_TEXTO = "As duas formulações que seguiram para o ensaio (F2 e F3) a
 const FORMULACAO_SELECIONADA = "F2";
 
 
+<<<<<<< HEAD
+/* ---------- 3c. FOTOS DA BOMBA (carrossel na página Resultados) ----------
+   Uma linha por imagem da bomba de sementes pronta. As setas do site passam
+   de uma para a outra.
+     src:     "img/bomba1.jpg"  (ou "https://...")
+     legenda: texto curto que aparece embaixo da foto
+     credito: opcional, por exemplo "Foto: equipe do projeto"
+   Enquanto o src estiver vazio, aparece uma moldura reservada.
+   Para ter mais imagens, copie uma linha; para ter menos, apague.
+   Cada linha termina com vírgula.
+------------------------------------------- */
+const FOTOS_PROJETO = [
+  { src: "https://cdnstatic.tencentcs.com/edgeone/pages/assets/1793833707069-ozFk.png", 
+    alt: "Bomba de sementes pronta (F2)",        
+    credit: "Equipe Interárea Natureza" },
+
+  { src: "https://cdnstatic.tencentcs.com/edgeone/pages/assets/1793833243202-BQCQ.png", 
+    alt: "Bomba de sementes pronta, outro ângulo", 
+    credit: "" },
+
+  { src: "https://cdnstatic.tencentcs.com/edgeone/pages/assets/1793833363227-Ap1W.png", 
+    alt: "Bomba de sementes pronta, em detalhe",   
+    credit: "" }
+];
+
+
+=======
+>>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 /* ---------- 4. CAMADAS DO DIAGRAMA (formulação selecionada, F2) ---------- */
 const LAYERS = {
   argila: {
@@ -417,8 +541,11 @@ const BOMB_STEPS = [
                germinadas: quantas germinaram (nunca mais que as semeadas)
                O site calcula sozinho a porcentagem (germinadas ÷ semeadas × 100).
                Sem linhas aqui, o site mostra só o resultado descritivo (GERM_TEXTO).
+<<<<<<< HEAD
+=======
    TESTIMONIES: registros feitos com as comunidades, SOMENTE com autorização.
                Formato: { name: "", community: "", practice: "", text: "" }
+>>>>>>> 50e1a751b5d9e8cbe2fd879ca7367e9c600931d3
 ------------------------------------------- */
 const SELECTED = ["maxixe", "linguadevaca"];
 
@@ -426,7 +553,6 @@ const GERMINACAO = [
   // { formulacao: "F2", especie: "maxixe", semeadas: 20, germinadas: 12 },
 ];
 
-const TESTIMONIES = [];
 
 
 /* ---------- 7. EQUIPE ----------
