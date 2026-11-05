@@ -145,23 +145,23 @@ const SPECIES = [
     id: "maxixe", name: "Maxixe", sci: "Cucumis anguria L.", family: "Cucurbitaceae",
     origin: "introduzida",
     originNote: "Cultura de origem africana (Embrapa), muito cultivada no Norte e no Nordeste do Brasil. Confirme o status no Brasil na Flora e Funga do Brasil.",
-    tags: ["PANC", "Uso tradicional"], roles: ["alimento"], fit: 0,
-    ecology: "Trepadeira anual de cultivo, que cresce em hortas e roçados. Não é espécie nativa da vegetação do município e não foi escolhida para restaurar áreas degradadas.",
+    tags: ["PANC", "Uso tradicional"], roles: ["alimento"], fit: 2,
+    ecology: "Trepadeira anual de cultivo, que cresce em hortas e roçados. Não é espécie nativa da vegetação do município.",
     culture: "O fruto é ingrediente da culinária nordestina, como na maxixada, e pode ser comido cru em salada no lugar do pepino. Segundo a Embrapa, é uma hortaliça pouco conhecida fora das regiões onde é tradicional.",
     seed: ["Em estudo da Embrapa com 23 acessos de bancos de germoplasma, a germinação começou entre 4 e 66 dias após elevar a temperatura a 26 °C, e em 42,8% dos casos já na primeira semana.", "As sementes têm dormência fisiológica sensível à luz e à temperatura (Yokoyama e Silva Júnior, 1988, citados pela Embrapa)."],
     bomb: "Semente-modelo dos ensaios da equipe, escolhida para testar a estrutura da bomba. Como é introduzida, fica fora do montador de mistura para áreas degradadas.",
     caution: "Cite sempre o nome científico, pois há outras cucurbitáceas chamadas de maxixe."
   },
   {
-    id: "linguadevaca", name: "Língua-de-vaca", sci: "Rumex obtusifolius L.", family: "Polygonaceae",
-    origin: "introduzida",
-    originNote: "Espécie de origem europeia, hoje espalhada pelo mundo. Confirme a origem e o status no Brasil na Flora e Funga do Brasil.",
-    tags: ["PANC"], roles: ["alimento"], fit: 0,
-    ecology: "Erva perene de áreas perturbadas e pastos. Cada planta pode produzir dezenas de milhares de sementes, que ficam dormentes no solo por anos. Por isso é tratada como planta invasora.",
-    culture: "Folhas jovens de azedas do gênero Rumex são comidas como hortaliça em várias culturas, e a planta aparece em usos populares de remédio caseiro. Pergunte à comunidade como ela é usada aqui.",
-    seed: ["Produz sementes pequenas em quantidade enorme.", "A dormência no solo é longa: outro motivo para não espalhar."],
-    bomb: "Semente-modelo dos ensaios da equipe, com sementes pequenas. Por ser introduzida e invasora, fica fora do montador: espalhar as sementes em área degradada pode piorar o problema.",
-    caution: "As folhas têm oxalato: com problema nos rins, evite. Cite sempre o nome científico, porque \"língua-de-vaca\" também é nome popular de outras plantas, como a Chaptalia nutans."
+    id: "linguadevaca", name: "Língua-de-vaca", sci: "Chaptalia nutans (L.) Pol.", family: "Asteraceae",
+    origin: "nativa",
+    originNote: "Nativa do Brasil, segundo a página Biologia da Paisagem, que a registra em todos os biomas, menos o Pantanal, mas como menos comum no Norte e no Nordeste. Confirme a ocorrência na Bahia e em Camaçari na Flora e Funga do Brasil e no speciesLink.",
+    tags: ["Uso tradicional"], roles: [], fit: 2,
+    ecology: "Erva perene e rizomatosa, que cresce rente ao chão em campos, savanas e formações florestais, e também em áreas alteradas pelo ser humano. As folhas têm de 5 a 20 cm. Cada flor-capítulo se curva para baixo, em um cabo de 10 a 60 cm. No Brasil, floresce de outubro a janeiro.",
+    culture: "Tem usos populares de remédio caseiro. Um artigo de revisão registra folhas aquecidas sobre contusões, ferimentos e hemorragias, e folhas e raízes por via oral contra febres, problemas pulmonares e doenças de pele. Também é chamada de arnica-do-campo, fumo-do-mato e erva-de-sangue. Isso é registro de uso popular e não recomendação de tratamento.",
+    seed: ["O fruto é um aquênio de 9 a 20 mm, com um tufo de pelos (papo) de 10 a 12 mm, e é levado pelo vento.", "As fontes consultadas não trazem dados de germinação desta espécie."],
+    bomb: "Semente-modelo dos ensaios da equipe. É nativa e pode entrar na mistura, mas as fontes consultadas não trazem dados de germinação, então teste antes de usar em quantidade.",
+    caution: "Cite sempre o nome científico: \"língua-de-vaca\" também é nome popular do Rumex obtusifolius, uma planta introduzida e invasora, que não é esta."  
   },
   {
     id: "jenipapo", name: "Jenipapo", sci: "Genipa americana L.", family: "Rubiaceae",
@@ -327,13 +327,13 @@ const PHOTOS = {
     credit: ""
   },
   linguadevaca: {   // foto que você escolheu antes
-    src: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyKqPpPBk2PMG9rLMwjHt4xPHn-IRBZn8eJ5riWutEMW6c_eExYC3WZffJ&s=10",
+    src: "https://inaturalist-open-data.s3.amazonaws.com/photos/113703955/medium.jpeg",
     alt: "Língua-de-vaca",
     credit: ""
   },
 };
-  
-  
+
+
 const ORIGIN_LABELS = { nativa: "Nativa", introduzida: "Introduzida" };
 
 
@@ -391,7 +391,7 @@ const FORMULATIONS = [
    Texto resumido da metodologia. Os números abaixo são os medidos pela equipe. */
 const METODO = {
   intro: "A pesquisa combinou fundamentação teórica e uma etapa prática. A fundamentação reuniu revisão bibliográfica narrativa e levantamento de dados ambientais em sites oficiais, com descritores sobre restauração ecológica e tecnologias sociais. A etapa prática desenvolveu e avaliou bombas de sementes.",
-  sementes: "Para padronizar os ensaios e verificar a integridade estrutural das bombas, usaram-se primeiro sementes de feijão (Phaseolus vulgaris), de germinação rápida e vigorosa. Em seguida, foram substituídas por sementes de maxixe (Cucumis anguria) e de língua-de-vaca (Rumex obtusifolius).",
+    sementes: "Para padronizar os ensaios e verificar a integridade estrutural das bombas, usaram-se primeiro sementes de feijão (Phaseolus vulgaris), de germinação rápida e vigorosa. Em seguida, foram substituídas por sementes de maxixe (Cucumis anguria) e de língua-de-vaca (Chaptalia nutans).",
   materiais: "Argila natural comum e substrato orgânico comercial. As proporções continuam sendo ajustadas conforme as características físicas e o tamanho de cada semente.",
   secagem: "As bombas secaram à temperatura ambiente (24 a 27 °C), sobre caixa de ovos de polpa de papel.",
   analise: "Os dados foram analisados de forma descritiva, para comparar o desempenho estrutural e germinativo das bombas e selecionar a de melhor qualidade."
@@ -501,8 +501,8 @@ const GERMINACAO = [
 /* ---------- 7. EQUIPE ----------
    Preencha para aparecer na página Projeto. */
 const TEAM = {
-  turmas: "",
-  orientadores: [],
+  turmas: "2 TI C",
+  orientadores: ["Professor Igor Felipe Santana Lima"],
   integrantes: []
 };
 
@@ -535,7 +535,9 @@ const SOURCES = {
     { t: "Cambuí, Plantas para o Futuro (Embrapa)", u: "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1104673/1/Cambui.pdf", n: "Myrciaria floribunda: ocorrência na Bahia, em restinga. Germinação, tegumento e uso do fruto." },
     { t: "PANC da restinga: ocorrência e uso em Maraú, Bahia (ESCAS)", u: "https://www.escas.org.br/wp-content/uploads/2023/09/PLANTAS-ALIMENTICIAS-NAO-CONVENCIONAIS-DA-RESTINGA-Ocorrencia-e-uso-no-Municipio-de-Marau-Bahia-Brasil.pdf", n: "10 PANCs de restinga citadas por moradores, entre elas aroeira, ora-pro-nóbis e o cacto garu." },
     { t: "PANC da restinga: estudo em Jandaíra, Bahia (Even3)", u: "https://www.even3.com.br/anais/vsfdrfceudpdr2021/337182-plantas-alimenticias-nao-convencionais-da-restinga--um-estudo-no-municipio-de-jandaira-na-bahia/", n: "Cinco PANCs do Litoral Norte da Bahia, entre elas ora-pro-nóbis e garu." },
-    { t: "Língua-de-vaca (Agrolink)", u: "https://www.agrolink.com.br/problema/lingua-de-vaca_348.html", n: "Rumex obtusifolius como planta invasora, com até 60 mil sementes por planta e dormência de anos." },
+    { t: "Chaptalia nutans, língua-de-vaca (Biologia da Paisagem)", u: "https://biologiadapaisagem.com.br/2025/10/16/chaptalia-nutans-lingua-de-vaca/", n: "Nativa do Brasil, hábitat, dispersão dos frutos pelo vento, nomes populares." },
+    { t: "Chaptalia nutans (Wikipedia)", u: "https://en.wikipedia.org/wiki/Chaptalia_nutans", n: "Hábito, tamanho do fruto e do papo, floração no Brasil." },
+    { t: "Chaptalia nutans e seu uso medicinal (Multiciência Online)", u: "http://www.urisantiago.br/multicienciaonline/adm/upload/v6/n9/9d94d395dfd8eb9db96fc08428543060.pdf", n: "Usos populares das folhas e raízes." },
     { t: "Mata Atlântica na APA do Pratigi, Bahia (repositório da UFRB)", u: "https://ri.ufrb.edu.br/handle/123456789/2717", n: "342 espécies arbóreas em 162 hectares; Myrtaceae é a família mais rica." }
   ],
   consult: [
